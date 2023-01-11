@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import { Box } from '../components/base';
-import styles from '../styles/Home.module.css';
+import { Box, Text, Heading } from '../components/base';
 
 export default function Home() {
   return (
@@ -13,7 +12,10 @@ export default function Home() {
       </Head>
 
       <Box>
-        <h1>Risidio</h1>
+        <Heading as="h1" className="font-thin">
+          Risidio
+        </Heading>
+        <Text>Decentralized</Text>
       </Box>
     </>
   );
