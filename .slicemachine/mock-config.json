@@ -1,0 +1,27 @@
+{
+  "_cts": {
+    "home": {},
+    "page": {}
+  },
+  "slices": {
+    "HeroSlice": {},
+    "SectionSlice": {},
+    "Section2": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Section1": {
+      "default": {
+        "primary": {
+          "content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
