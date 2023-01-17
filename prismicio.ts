@@ -20,12 +20,12 @@ const routes = [
   },
 ];
 
-/**
- * Creates a Prismic client for the project's repository. The client is used to
- * query content from the Prismic API.
- *
- * @param config {prismicNext.CreateClientConfig} - Configuration for the Prismic client.
- */
+// /**
+//  * Creates a Prismic client for the project's repository. The client is used to
+//  * query content from the Prismic API.
+//  *
+//  * @param config {prismicNext.CreateClientConfig} - Configuration for the Prismic client.
+//  */
 export function createClient({
   previewData,
   req,

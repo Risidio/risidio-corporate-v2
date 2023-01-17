@@ -13,9 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
       <PrismicPreview repositoryName={repositoryName}>
         <Layout>
-          <Navbar />
           <Component {...pageProps} />
-          <Footer />
         </Layout>
       </PrismicPreview>
     </PrismicProvider>

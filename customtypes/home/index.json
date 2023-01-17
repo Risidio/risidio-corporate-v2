@@ -18,6 +18,9 @@
             },
             "section2": {
               "type": "SharedSlice"
+            },
+            "footer_section": {
+              "type": "SharedSlice"
             }
           }
         }
