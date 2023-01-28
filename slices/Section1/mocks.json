@@ -14,34 +14,32 @@
           }
         ]
       },
+      "content": {
+        "__TYPE__": "FieldContent",
+        "value": "turn",
+        "type": "Text"
+      },
+      "subtitle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Pariatur labore nostrud amet deserunt adipisicing labore dolor proident veniam ullamco fugiat nulla proident minim. Magna duis culpa exercitation adipisicing officia quis aute ut sunt nostrud tempor non et veniam."
+            }
+          }
+        ]
+      },
       "description": {
         "__TYPE__": "StructuredTextContent",
         "value": [
           {
             "type": "paragraph",
             "content": {
-              "text": "Fugiat cillum quis elit amet est eiusmod nisi voluptate enim. Consequat cillum magna adipisicing et excepteur voluptate quis aliqua."
+              "text": "Exercitation eiusmod quis est tempor cupidatat cillum nulla cillum officia cillum minim enim cupidatat eu consequat. Anim eu dolor mollit anim qui consequat incididunt fugiat nulla do eu pariatur cillum Lorem ad."
             }
           }
         ]
-      },
-      "content": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "paragraph",
-            "content": {
-              "text": "Esse ipsum irure ut sit ad ad. Laboris voluptate eu cillum aute veniam proident culpa reprehenderit dolore amet consequat."
-            }
-          }
-        ]
-      },
-      "link": {
-        "__TYPE__": "LinkContent",
-        "value": {
-          "__TYPE__": "ExternalLink",
-          "url": "http://twitter.com"
-        }
       }
     },
     "items": [

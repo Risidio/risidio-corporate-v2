@@ -4,7 +4,24 @@
     "page": {}
   },
   "slices": {
-    "HeroSlice": {},
+    "HeroSlice": {
+      "default": {
+        "primary": {
+          "caption1": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "caption2": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
     "SectionSlice": {},
     "Section2": {
       "default": {
@@ -14,7 +31,13 @@
     "Section1": {
       "default": {
         "primary": {
-          "content": {
+          "subtitle": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "description": {
             "config": {
               "patternType": "PARAGRAPH",
               "blocks": 1
@@ -53,6 +76,29 @@
           }
         },
         "items": {}
+      }
+    },
+    "Gallery": {
+      "default": {
+        "primary": {
+          "subtitle": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "DiscoverSection": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Section3": {},
+    "Section4": {
+      "default": {
+        "primary": {}
       }
     }
   }

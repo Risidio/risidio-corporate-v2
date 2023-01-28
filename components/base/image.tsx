@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 
-export const IMAGE_URL = process.env['NX_IMAGE_URL'];
-
 interface ImgProps {
   src: string;
   width?: number;
@@ -10,7 +8,7 @@ interface ImgProps {
   className?: string;
 }
 
-function Img({ src, width, height, alt, ...props }: ImgProps) {
+function Img({ src, width, height, alt, className, ...props }: ImgProps) {
   const params = src.includes('?');
   let source: string;
 
@@ -20,7 +18,7 @@ function Img({ src, width, height, alt, ...props }: ImgProps) {
     source = `${src}?w=${width}&h=${height}`;
   }
 
-  return <img src={`${IMAGE_URL}${source}`} alt={alt} {...props} />;
+  return <img src={`${source}`} className={className} alt={alt} {...props} />;
 }
 
 export { Img };

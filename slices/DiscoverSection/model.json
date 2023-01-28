@@ -1,15 +1,15 @@
 {
-  "id": "section_slice",
+  "id": "discover_section",
   "type": "SharedSlice",
-  "name": "Section1",
-  "description": "SectionSlice",
+  "name": "DiscoverSection",
+  "description": "DiscoverSection",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "SectionSlice",
+      "description": "DiscoverSection",
       "primary": {
         "title": {
           "type": "StructuredText",
@@ -18,34 +18,36 @@
             "label": "Title",
             "placeholder": "This is where it all begins..."
           }
+        }
+      },
+      "items": {
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "icon",
+            "constraint": {},
+            "thumbnails": []
+          }
         },
-        "subtitle": {
+        "title": {
           "type": "StructuredText",
           "config": {
-            "label": "Subtitle",
-            "placeholder": "A nice description of your feature",
+            "label": "Title",
+            "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph"
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
         "content": {
-          "type": "Text",
-          "config": {
-            "label": "content",
-            "placeholder": ""
-          }
-        },
-        "description": {
           "type": "StructuredText",
           "config": {
-            "label": "description",
+            "label": "Content",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },
-      "items": {},
       "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
     }
   ]

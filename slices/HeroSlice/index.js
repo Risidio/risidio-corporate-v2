@@ -1,5 +1,6 @@
-import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import React from 'react';
+
+import { RichText } from '../../components/base';
 
 /**
  * @typedef {import("@prismicio/client").Content.HeroSliceSlice} HeroSliceSlice
@@ -7,30 +8,37 @@ import { PrismicRichText } from '@prismicio/react'
  * @param { HeroSliceProps }
  */
 const HeroSlice = ({ slice }) => (
-  <section>
-    <span className="title">
-      {
-        slice.primary.title ?
-        <PrismicRichText field={slice.primary.title}/>
-        : <h2>Template slice, update me!</h2>
-      }
-    </span>
-    {
-      slice.primary.description ?
-      <PrismicRichText field={slice.primary.description}/>
-      : <p>start by editing this slice from inside Slice Machine!</p>
-    }
-    <style jsx>{`
-        section {
-          max-width: 600px;
-          margin: 4em auto;
-          text-align: center;
-        }
-        .title {
-          color: #8592e0;
-        }
-    `}</style>
-  </section>
-)
+  <section className="mt-60 mb-56">
+    {slice.primary.caption1 ? (
+      <RichText
+        className="text-base-grey text-center text-8xl font-bold hover:text-white mb-5"
+        field={slice.primary.caption1}
+      />
+    ) : (
+      <h2>Template slice, update me!</h2>
+    )}
 
-export default HeroSlice
+    {slice.primary.caption2 ? (
+      <RichText
+        className="text-base-grey text-center text-8xl font-bold hover:text-white mb-5"
+        field={slice.primary.caption2}
+      />
+    ) : (
+      <p>start by editing this slice from inside Slice Machine!</p>
+    )}
+    {slice.primary.caption3 ? (
+      <RichText
+        className="text-base-grey text-center text-8xl font-bold hover:text-white mb-5"
+        field={slice.primary.caption3}
+      />
+    ) : (
+      <p>start by editing this slice from inside Slice Machine!</p>
+    )}
+    <RichText
+      className="text-white text-center mt-14"
+      field={slice.primary.content}
+    />
+  </section>
+);
+
+export default HeroSlice;

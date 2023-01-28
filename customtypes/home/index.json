@@ -21,6 +21,18 @@
             },
             "footer_section": {
               "type": "SharedSlice"
+            },
+            "discover_section": {
+              "type": "SharedSlice"
+            },
+            "gallery": {
+              "type": "SharedSlice"
+            },
+            "section3": {
+              "type": "SharedSlice"
+            },
+            "section4": {
+              "type": "SharedSlice"
             }
           }
         }

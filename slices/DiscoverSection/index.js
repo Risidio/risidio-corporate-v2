@@ -1,0 +1,41 @@
+import React from 'react';
+import { Box, Button, RichText } from '../../components/base';
+import Card from '../../components/shared/card';
+
+/**
+ * @typedef {import("@prismicio/client").Content.DiscoverSectionSlice} DiscoverSectionSlice
+ * @typedef {import("@prismicio/react").SliceComponentProps<DiscoverSectionSlice>} DiscoverSectionProps
+ * @param { DiscoverSectionProps }
+ */
+const DiscoverSection = ({ slice }) => (
+  <Box className="bg-white pt-56 text-2xl pb-52 mt-52">
+    <Box className="text-center">
+      {slice.primary.title ? (
+        <RichText
+          className="text-black font-bold mt-7 text-[20px] mb-5"
+          field={slice.primary.title}
+        />
+      ) : (
+        <h2>Template slice, update me!</h2>
+      )}
+    </Box>
+    <Box className="flex flex-row max-w-6xl m-auto">
+      {slice?.items?.map((item, i) => (
+        <Card
+          key={i}
+          content={item.content}
+          title={item.title}
+          url={item.icon.url}
+          alt={item.icon.alt}
+        />
+      ))}
+    </Box>
+    <Box className="m-auto flex justify-center">
+      <Button className="bg-primary/[.4] text-primary font-semibold hover:bg-primary hover:text-white from-slate-100 rounded-full px-10 py-4 mt-20">
+        Interested? Get In Touch
+      </Button>
+    </Box>
+  </Box>
+);
+
+export default DiscoverSection;

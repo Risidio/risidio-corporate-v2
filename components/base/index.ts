@@ -7,3 +7,4 @@ export * from './image';
 export * from './heading';
 export * from './richText';
 export * from './link';
+export * from './button';
