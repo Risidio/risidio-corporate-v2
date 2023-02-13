@@ -6,6 +6,64 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for AboutPage documents */
+interface AboutpageDocumentData {
+    /**
+     * Slice Zone field in *AboutPage*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: aboutpage.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<AboutpageDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *AboutPage → Slice Zone*
+ *
+ */
+type AboutpageDocumentDataSlicesSlice = FooterSectionSlice | HeroV2Slice | StackedgallerySlice | TeamGallerySlice | DescriptionSlice | DiscoverSectionSlice;
+/**
+ * AboutPage document from Prismic
+ *
+ * - **API ID**: `aboutpage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutpageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<AboutpageDocumentData>, "aboutpage", Lang>;
+/** Content for Contact documents */
+interface ContactDocumentData {
+    /**
+     * Slice Zone field in *Contact*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ContactDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Contact → Slice Zone*
+ *
+ */
+type ContactDocumentDataSlicesSlice = FooterSectionSlice;
+/**
+ * Contact document from Prismic
+ *
+ * - **API ID**: `contact`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ContactDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ContactDocumentData>, "contact", Lang>;
 /** Content for HomeScreen documents */
 interface HomeDocumentData {
     /**
@@ -97,7 +155,131 @@ type PageDocumentDataSlicesSlice = SectionSliceSlice | HeroSliceSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
-export type AllDocumentTypes = HomeDocument | PageDocument;
+/** Content for sustainability documents */
+interface SustainabilityDocumentData {
+    /**
+     * Slice Zone field in *sustainability*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sustainability.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<SustainabilityDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *sustainability → Slice Zone*
+ *
+ */
+type SustainabilityDocumentDataSlicesSlice = HeroV2Slice | DescriptionSlice | GallerySlice | FooterSectionSlice | Section5Slice;
+/**
+ * sustainability document from Prismic
+ *
+ * - **API ID**: `sustainability`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SustainabilityDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SustainabilityDocumentData>, "sustainability", Lang>;
+export type AllDocumentTypes = AboutpageDocument | ContactDocument | HomeDocument | PageDocument | SustainabilityDocument;
+/**
+ * Primary content in Description → Primary
+ *
+ */
+interface DescriptionSliceDefaultPrimary {
+    /**
+     * Title field in *Description → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: description.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description1 field in *Description → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: description.primary.description1
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description1: prismicT.RichTextField;
+    /**
+     * Subtitle field in *Description → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: description.primary.subtitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    subtitle: prismicT.RichTextField;
+    /**
+     * Description2 field in *Description → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: description.primary.description2
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description2: prismicT.RichTextField;
+    /**
+     * Description3 field in *Description → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: description.primary.description3
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description3: prismicT.RichTextField;
+}
+/**
+ * Item in Description → Items
+ *
+ */
+export interface DescriptionSliceDefaultItem {
+    /**
+     * Description field in *Description → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: description.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for Description Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Description`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DescriptionSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<DescriptionSliceDefaultPrimary>, Simplify<DescriptionSliceDefaultItem>>;
+/**
+ * Slice variation for *Description*
+ *
+ */
+type DescriptionSliceVariation = DescriptionSliceDefault;
+/**
+ * Description Shared Slice
+ *
+ * - **API ID**: `description`
+ * - **Description**: `Description`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type DescriptionSlice = prismicT.SharedSlice<"description", DescriptionSliceVariation>;
 /**
  * Primary content in DiscoverSection → Primary
  *
@@ -448,6 +630,81 @@ type GallerySliceVariation = GallerySliceDefault;
  */
 export type GallerySlice = prismicT.SharedSlice<"gallery", GallerySliceVariation>;
 /**
+ * Primary content in GalleryRow → Primary
+ *
+ */
+interface GalleryRowSliceDefaultPrimary {
+    /**
+     * Title field in *GalleryRow → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: gallery_row.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * Item in GalleryRow → Items
+ *
+ */
+export interface GalleryRowSliceDefaultItem {
+    /**
+     * image field in *GalleryRow → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: gallery_row.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Title field in *GalleryRow → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: gallery_row.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Description field in *GalleryRow → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: gallery_row.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for GalleryRow Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `GalleryRow`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type GalleryRowSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<GalleryRowSliceDefaultPrimary>, Simplify<GalleryRowSliceDefaultItem>>;
+/**
+ * Slice variation for *GalleryRow*
+ *
+ */
+type GalleryRowSliceVariation = GalleryRowSliceDefault;
+/**
+ * GalleryRow Shared Slice
+ *
+ * - **API ID**: `gallery_row`
+ * - **Description**: `GalleryRow`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type GalleryRowSlice = prismicT.SharedSlice<"gallery_row", GalleryRowSliceVariation>;
+/**
  * Primary content in HeroSlice → Primary
  *
  */
@@ -516,6 +773,65 @@ type HeroSliceSliceVariation = HeroSliceSliceDefault;
  *
  */
 export type HeroSliceSlice = prismicT.SharedSlice<"hero_slice", HeroSliceSliceVariation>;
+/**
+ * Primary content in HeroV2 → Primary
+ *
+ */
+interface HeroV2SliceDefaultPrimary {
+    /**
+     * Title field in *HeroV2 → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: hero_v2.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *HeroV2 → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: hero_v2.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * backgroung field in *HeroV2 → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: hero_v2.primary.backgroung
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    backgroung: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for HeroV2 Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `HeroV2`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroV2SliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HeroV2SliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *HeroV2*
+ *
+ */
+type HeroV2SliceVariation = HeroV2SliceDefault;
+/**
+ * HeroV2 Shared Slice
+ *
+ * - **API ID**: `hero_v2`
+ * - **Description**: `HeroV2`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HeroV2Slice = prismicT.SharedSlice<"hero_v2", HeroV2SliceVariation>;
 /**
  * Primary content in Section1 → Primary
  *
@@ -752,11 +1068,296 @@ type Section4SliceVariation = Section4SliceDefault;
  *
  */
 export type Section4Slice = prismicT.SharedSlice<"section4", Section4SliceVariation>;
+/**
+ * Primary content in Section5 → Primary
+ *
+ */
+interface Section5SliceDefaultPrimary {
+    /**
+     * Title field in *Section5 → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: section5.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Title2 field in *Section5 → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: section5.primary.title2
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title2: prismicT.RichTextField;
+    /**
+     * Title3 field in *Section5 → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: section5.primary.title3
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title3: prismicT.RichTextField;
+    /**
+     * Subtitle field in *Section5 → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: section5.primary.subtitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    subtitle: prismicT.RichTextField;
+    /**
+     * Comment field in *Section5 → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: section5.primary.comment
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    comment: prismicT.RichTextField;
+}
+/**
+ * Item in Section5 → Items
+ *
+ */
+export interface Section5SliceDefaultItem {
+    /**
+     * Icon field in *Section5 → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: section5.items[].icon
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    icon: prismicT.ImageField<never>;
+    /**
+     * Title field in *Section5 → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: section5.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Description field in *Section5 → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: section5.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for Section5 Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Section5`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type Section5SliceDefault = prismicT.SharedSliceVariation<"default", Simplify<Section5SliceDefaultPrimary>, Simplify<Section5SliceDefaultItem>>;
+/**
+ * Slice variation for *Section5*
+ *
+ */
+type Section5SliceVariation = Section5SliceDefault;
+/**
+ * Section5 Shared Slice
+ *
+ * - **API ID**: `section5`
+ * - **Description**: `Section5`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type Section5Slice = prismicT.SharedSlice<"section5", Section5SliceVariation>;
+/**
+ * Primary content in Stackedgallery → Primary
+ *
+ */
+interface StackedgallerySliceDefaultPrimary {
+    /**
+     * Title field in *Stackedgallery → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: stackedgallery.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * Item in Stackedgallery → Items
+ *
+ */
+export interface StackedgallerySliceDefaultItem {
+    /**
+     * image field in *Stackedgallery → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: stackedgallery.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Title field in *Stackedgallery → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: stackedgallery.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * description field in *Stackedgallery → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: stackedgallery.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for Stackedgallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Stackedgallery`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type StackedgallerySliceDefault = prismicT.SharedSliceVariation<"default", Simplify<StackedgallerySliceDefaultPrimary>, Simplify<StackedgallerySliceDefaultItem>>;
+/**
+ * Slice variation for *Stackedgallery*
+ *
+ */
+type StackedgallerySliceVariation = StackedgallerySliceDefault;
+/**
+ * Stackedgallery Shared Slice
+ *
+ * - **API ID**: `stackedgallery`
+ * - **Description**: `Stackedgallery`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type StackedgallerySlice = prismicT.SharedSlice<"stackedgallery", StackedgallerySliceVariation>;
+/**
+ * Primary content in TeamGallery → Primary
+ *
+ */
+interface TeamGallerySliceDefaultPrimary {
+    /**
+     * Title field in *TeamGallery → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: team_gallery.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Subtitle field in *TeamGallery → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: team_gallery.primary.subtitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    subtitle: prismicT.RichTextField;
+}
+/**
+ * Item in TeamGallery → Items
+ *
+ */
+export interface TeamGallerySliceDefaultItem {
+    /**
+     * title field in *TeamGallery → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_gallery.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * subtitle field in *TeamGallery → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_gallery.items[].subtitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    subtitle: prismicT.RichTextField;
+    /**
+     * image field in *TeamGallery → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_gallery.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * description field in *TeamGallery → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_gallery.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for TeamGallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `TeamGallery`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TeamGallerySliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TeamGallerySliceDefaultPrimary>, Simplify<TeamGallerySliceDefaultItem>>;
+/**
+ * Slice variation for *TeamGallery*
+ *
+ */
+type TeamGallerySliceVariation = TeamGallerySliceDefault;
+/**
+ * TeamGallery Shared Slice
+ *
+ * - **API ID**: `team_gallery`
+ * - **Description**: `TeamGallery`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TeamGallerySlice = prismicT.SharedSlice<"team_gallery", TeamGallerySliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, AllDocumentTypes, DiscoverSectionSliceDefaultPrimary, DiscoverSectionSliceDefaultItem, DiscoverSectionSliceDefault, DiscoverSectionSliceVariation, DiscoverSectionSlice, FooterSectionSliceDefaultPrimary, FooterSectionSliceDefault, FooterSectionSliceVariation, FooterSectionSlice, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, HeroSliceSliceDefaultPrimary, HeroSliceSliceDefault, HeroSliceSliceVariation, HeroSliceSlice, SectionSliceSliceDefaultPrimary, SectionSliceSliceDefault, SectionSliceSliceVariation, SectionSliceSlice, Section2SliceDefaultItem, Section2SliceDefault, Section2SliceVariation, Section2Slice, Section3SliceDefaultPrimary, Section3SliceDefault, Section3SliceVariation, Section3Slice, Section4SliceDefaultPrimary, Section4SliceDefault, Section4SliceVariation, Section4Slice };
+        export type { AboutpageDocumentData, AboutpageDocumentDataSlicesSlice, AboutpageDocument, ContactDocumentData, ContactDocumentDataSlicesSlice, ContactDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SustainabilityDocumentData, SustainabilityDocumentDataSlicesSlice, SustainabilityDocument, AllDocumentTypes, DescriptionSliceDefaultPrimary, DescriptionSliceDefaultItem, DescriptionSliceDefault, DescriptionSliceVariation, DescriptionSlice, DiscoverSectionSliceDefaultPrimary, DiscoverSectionSliceDefaultItem, DiscoverSectionSliceDefault, DiscoverSectionSliceVariation, DiscoverSectionSlice, FooterSectionSliceDefaultPrimary, FooterSectionSliceDefault, FooterSectionSliceVariation, FooterSectionSlice, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, GalleryRowSliceDefaultPrimary, GalleryRowSliceDefaultItem, GalleryRowSliceDefault, GalleryRowSliceVariation, GalleryRowSlice, HeroSliceSliceDefaultPrimary, HeroSliceSliceDefault, HeroSliceSliceVariation, HeroSliceSlice, HeroV2SliceDefaultPrimary, HeroV2SliceDefault, HeroV2SliceVariation, HeroV2Slice, SectionSliceSliceDefaultPrimary, SectionSliceSliceDefault, SectionSliceSliceVariation, SectionSliceSlice, Section2SliceDefaultItem, Section2SliceDefault, Section2SliceVariation, Section2Slice, Section3SliceDefaultPrimary, Section3SliceDefault, Section3SliceVariation, Section3Slice, Section4SliceDefaultPrimary, Section4SliceDefault, Section4SliceVariation, Section4Slice, Section5SliceDefaultPrimary, Section5SliceDefaultItem, Section5SliceDefault, Section5SliceVariation, Section5Slice, StackedgallerySliceDefaultPrimary, StackedgallerySliceDefaultItem, StackedgallerySliceDefault, StackedgallerySliceVariation, StackedgallerySlice, TeamGallerySliceDefaultPrimary, TeamGallerySliceDefaultItem, TeamGallerySliceDefault, TeamGallerySliceVariation, TeamGallerySlice };
     }
 }

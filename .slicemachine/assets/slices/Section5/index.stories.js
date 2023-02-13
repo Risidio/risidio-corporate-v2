@@ -1,0 +1,9 @@
+import MyComponent from '../../../../slices/Section5';
+
+export default {
+  title: 'slices/Section5'
+}
+
+
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"icon":{"dimensions":{"width":6000,"height":4000},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1544731612-de7f96afe55f"},"title":[{"type":"paragraph","text":"Qui dolor laboris id consequat nulla ea dolore mollit ipsum ex aute cillum do cillum. Minim cillum mollit do nisi elit exercitation. Dolore deserunt sunt sunt id consequat culpa eiusmod Lorem Lorem.","spans":[]}],"description":[{"type":"paragraph","text":"Culpa elit nulla commodo veniam sit consectetur. Proident labore culpa id sunt irure voluptate in in esse.","spans":[]}]}],"primary":{"title":[{"type":"heading1","text":"Since","spans":[]}],"title2":[{"type":"paragraph","text":"Cillum excepteur nostrud eiusmod do culpa qui.","spans":[]}],"title3":[{"type":"paragraph","text":"Nisi amet excepteur ipsum nisi voluptate ut amet magna aliquip ex in non in quis incididunt. Sint quis do occaecat pariatur non excepteur cillum officia cillum. Do elit aliquip ea anim magna quis magna ad exercitation culpa dolore cupidatat tempor cupidatat.","spans":[]}],"subtitle":[{"type":"paragraph","text":"Non incididunt in nostrud incididunt in esse magna aliquip minim aliquip ex Lorem aliquip. Dolor officia fugiat labore deserunt eu in proident nisi reprehenderit. Irure culpa qui proident.","spans":[]}],"comment":[{"type":"paragraph","text":"Commodo labore veniam irure aute ut nulla aute et ex. Ea ipsum cupidatat sit elit enim voluptate magna reprehenderit ut. Magna ullamco commodo aliquip velit proident laborum commodo laboris et quis enim qui.","spans":[]}]},"id":"_Default","slice_type":"section5"}} />
+_Default.storyName = ''

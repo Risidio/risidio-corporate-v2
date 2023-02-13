@@ -12,7 +12,7 @@ interface IProps {
 
 const Card = ({ content, title, url, alt }: IProps) => {
   return (
-    <Box className="text-center flex flex-col justify-center  max-w-xs m-auto mt-36">
+    <Box className="text-center flex flex-col justify-center  max-w-[22rem] m-auto mt-24">
       <Box className="flex justify-center mb-4">
         <Img src={url} alt={alt} className="text-primary font-bold text-9xl" />
       </Box>

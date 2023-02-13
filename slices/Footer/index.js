@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Img, PrismicHREF, RichText, Text } from '../../components/base';
 import Image from 'next/image';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  * @typedef {import("@prismicio/client").Content.FooterSectionSlice} FooterSectionSlice
@@ -50,84 +52,83 @@ const FooterSection = ({ slice }) => {
             />
           </Box>
         </Box>
+        <Box className="bg-black pl-4 sm:pl-0">
+          <Box className="flex flex-col  sm:flex-row m-auto justify-between max-w-[1400px] pr-9">
+            <Box className="hidden h-20 lg:h-max-content md:flex">
+              <Link href="/">
+                <Image
+                  src="/img/logoWhite.svg"
+                  alt="Risidio"
+                  width={300}
+                  height={200}
+                />
+              </Link>
+            </Box>
+            <Box className="flex flex-col mb-8">
+              <RichText
+                className="font-light  text-slate-400 text-base mb-3"
+                field={slice.primary.title1}
+              />
 
-        <Box className="flex flex-row justify-between">
-          <Box>
-            <Image
-              src="/img/logoWhite.svg"
-              alt="Risidio"
-              width={300}
-              height={200}
-            />
-          </Box>
-          <Box className="flex flex-col">
-            <RichText
-              className="font-light  text-slate-400 text-xl mb-3"
-              field={slice.primary.title1}
-            />
+              <Link
+                href="/about"
+                className="text-white font-medium mb-1 text-xs"
+              >
+                About
+              </Link>
+              <Link className="text-white font-medium mb-1 text-xs" href="">
+                our work
+              </Link>
+              <Link
+                href="/sustainability"
+                className="text-white font-medium mb-1 text-xs"
+              >
+                Sustainability
+              </Link>
+            </Box>
+            <Box className="flex flex-col text-white mb-8">
+              <span className="font-light text-slate-400 mb-3 text-base">
+                {slice.primary.title2}
+              </span>
 
-            <PrismicHREF
-              className="text-white font-medium mb-1"
-              field={slice.primary.link2}
-            >
-              About
-            </PrismicHREF>
-            <PrismicHREF
-              className="text-white font-medium mb-1"
-              field={slice.primary.itemlink1}
-            >
-              our work
-            </PrismicHREF>
-            <PrismicHREF
-              className="text-white font-medium mb-1"
-              field={slice.primary.link3}
-            >
-              Sustainability
-            </PrismicHREF>
-          </Box>
-          <Box className="flex flex-col text-white">
-            <span className="font-light text-slate-400 text-xl mb-3">
-              {slice.primary.title2}
-            </span>
+              <Link href="" className="text-white font-medium mb-1 text-xs">
+                Marketplace
+              </Link>
+              <Link
+                href="https://www.indigenft.io/"
+                className="text-white font-medium mb-1 text-xs"
+              >
+                IndigeNFT
+              </Link>
+              <Link
+                href="https://thisisnumberone.com/"
+                className="text-white font-medium mb-1 text-xs"
+              >
+                This is #1
+              </Link>
+            </Box>
+            <Box className="flex flex-col">
+              <Text className="font-light text-slate-400  text-base mb-3">
+                <span>{slice.primary.title3}</span>
+              </Text>
+              <Text className="text-white mb-1 font-medium w-36 text-xs">
+                Kemp House 152 - 160 City Road, London EC1V 2NX
+              </Text>
+              <Text
+                onClick={() => {
+                  window.location.href = 'mailto:info@risidio.com';
+                }}
+                className="text-sm text-risidio-yellow cursor-pointer"
+              >
+                info@risidio.com
+              </Text>
 
-            <PrismicHREF
-              className="text-white font-medium mb-1"
-              field={slice.primary.link4}
-            >
-              Marketplace
-            </PrismicHREF>
-            <PrismicHREF
-              className="text-white font-medium mb-1"
-              field={slice.primary.link2}
-            >
-              IndigeNFT
-            </PrismicHREF>
-            <PrismicHREF
-              className="text-white font-medium mb-1"
-              field={slice.primary.link3}
-            >
-              This is #1
-            </PrismicHREF>
-          </Box>
-          <Box className="flex flex-col">
-            <Text className="font-light text-slate-400  text-xl mb-3">
-              <span>{slice.primary.title3}</span>
-            </Text>
-            <Text className="text-white mb-1 font-medium w-36">
-              Kemp House 152 - 160 City Road, London EC1V 2NX
-            </Text>
-            <Text
-              onClick={() => {
-                window.location.href = 'mailto:info@risidio.com';
-              }}
-              className="text-sm text-risidio-yellow cursor-pointer"
-            >
-              info@risidio.com
-            </Text>
+              <FontAwesomeIcon icon="fa-brands fa-discord" />
+            </Box>
           </Box>
         </Box>
       </Box>
-      <Text className="text-white text-xs pb-3">
+      <Text className="text-white text-xs pb-3 pl-2">
         © 2023 Risidio Ltd. All right reserved.
       </Text>
     </section>

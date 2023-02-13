@@ -1,0 +1,119 @@
+{
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "footer_section$1066e920-af9b-429c-adce-c48ee85a486b",
+        "name": "footer_section",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Condition"
+                  }
+                }
+              ]
+            },
+            "item1": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Excepteur minim exercitation ea irure velit culpa ad sit."
+                  }
+                }
+              ]
+            },
+            "itemlink1": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://prismic.io"
+              }
+            },
+            "item2": {
+              "__TYPE__": "FieldContent",
+              "value": "tightly",
+              "type": "Text"
+            },
+            "link2": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://slicemachine.dev"
+              }
+            },
+            "item3": {
+              "__TYPE__": "FieldContent",
+              "value": "yellow",
+              "type": "Text"
+            },
+            "link3": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "https://prismic.io"
+              }
+            },
+            "item4": {
+              "__TYPE__": "FieldContent",
+              "value": "off",
+              "type": "Text"
+            },
+            "link4": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "http://twitter.com"
+              }
+            },
+            "title2": {
+              "__TYPE__": "FieldContent",
+              "value": "grain",
+              "type": "Text"
+            },
+            "title3": {
+              "__TYPE__": "FieldContent",
+              "value": "will",
+              "type": "Text"
+            },
+            "title1": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Aute tempor laborum deserunt cillum Lorem in. Non laboris anim exercitation labore ad aliqua amet aliqua sint."
+                  }
+                }
+              ]
+            },
+            "subtitle": {
+              "__TYPE__": "FieldContent",
+              "value": "prove",
+              "type": "Text"
+            },
+            "content": {
+              "__TYPE__": "FieldContent",
+              "value": "lamp",
+              "type": "Text"
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

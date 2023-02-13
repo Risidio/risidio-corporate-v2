@@ -9,7 +9,7 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
 
 // Update the routes array to match your project's route structure
 /** @type {prismic.ClientConfig['routes']} **/
-const routes = [
+export const routes = [
   {
     type: 'home',
     path: '/',
@@ -19,6 +19,17 @@ const routes = [
     path: '/:uid',
   },
 ];
+
+export function linkResolver(doc: any) {
+  switch (doc.type) {
+    case 'homepage':
+      return '/';
+    case 'page':
+      return `/${doc.uid}`;
+    default:
+      return null;
+  }
+}
 
 // /**
 //  * Creates a Prismic client for the project's repository. The client is used to

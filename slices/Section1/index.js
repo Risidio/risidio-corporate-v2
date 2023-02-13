@@ -10,9 +10,10 @@ const SectionSlice = ({ slice }) => {
   return (
     <>
       <Box className="mb-16">
-        <Box className="h-48 w-0 border-x-[0.2px] m-auto border-white border-solid"></Box>
+        <Box className="h-48 w-0 border-l-[0.1px] m-auto border-[#ffffff80] border-solid"></Box>
       </Box>
-      <Box className="text-center m-auto mb-36">
+
+      <Box className="text-center m-auto mb-96">
         <span className="title">
           {slice.primary.title ? (
             <RichText

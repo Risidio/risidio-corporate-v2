@@ -1,7 +1,10 @@
 {
   "_cts": {
     "home": {},
-    "page": {}
+    "page": {},
+    "aboutpage": {},
+    "sustainability": {},
+    "contact": {}
   },
   "slices": {
     "HeroSlice": {
@@ -99,6 +102,53 @@
     "Section4": {
       "default": {
         "primary": {}
+      }
+    },
+    "Stackedgallery": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "HeroV2": {},
+    "TeamGallery": {
+      "default": {
+        "primary": {
+          "subtitle": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Description": {
+      "default": {
+        "primary": {
+          "description1": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "GalleryRow": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Section5": {
+      "default": {
+        "primary": {
+          "title2": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   }

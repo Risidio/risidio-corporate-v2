@@ -8,7 +8,7 @@ import Card from '../../components/shared/card';
  * @param { DiscoverSectionProps }
  */
 const DiscoverSection = ({ slice }) => (
-  <Box className="bg-white pt-56 text-2xl pb-52 mt-52">
+  <Box className="bg-white pt-56 text-2xl pb-52">
     <Box className="text-center">
       {slice.primary.title ? (
         <RichText
@@ -19,7 +19,7 @@ const DiscoverSection = ({ slice }) => (
         <h2>Template slice, update me!</h2>
       )}
     </Box>
-    <Box className="flex flex-row max-w-6xl m-auto">
+    <Box className="flex flex-col lg:flex-row max-w-7xl m-auto ">
       {slice?.items?.map((item, i) => (
         <Card
           key={i}
@@ -31,7 +31,7 @@ const DiscoverSection = ({ slice }) => (
       ))}
     </Box>
     <Box className="m-auto flex justify-center">
-      <Button className="bg-primary/[.4] text-primary font-semibold hover:bg-primary hover:text-white from-slate-100 rounded-full px-10 py-4 mt-20">
+      <Button className="bg-primary/[.2] text-primary font-semibold hover:bg-primary hover:text-white from-slate-100 rounded-full px-10 py-4 mt-12 text-xs">
         Interested? Get In Touch
       </Button>
     </Box>

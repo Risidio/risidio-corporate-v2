@@ -1,0 +1,33 @@
+{
+  "id": "sustainability",
+  "label": "sustainability",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "hero_v2": {
+              "type": "SharedSlice"
+            },
+            "description": {
+              "type": "SharedSlice"
+            },
+            "gallery": {
+              "type": "SharedSlice"
+            },
+            "footer_section": {
+              "type": "SharedSlice"
+            },
+            "section5": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

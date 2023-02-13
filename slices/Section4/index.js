@@ -1,5 +1,5 @@
 import React from 'react';
-import { Img, RichText, Box, Button } from '../../components/base';
+import { Img, RichText, Box, Button, Input } from '../../components/base';
 
 /**
  * @typedef {import("@prismicio/client").Content.Section4Slice} Section4Slice
@@ -15,15 +15,19 @@ const Section4 = ({ slice }) => (
     <span className="title">
       {slice.primary.title ? (
         <RichText
-          className="text-white text-4xl font-light"
+          className="text-white text-4xl text-center font-light"
           field={slice.primary.title}
         />
       ) : (
         <h2>Template slice, update me!</h2>
       )}
     </span>
+    <Box className="max-w-xl flex flex-row mt-10 justify-between w-full px-4">
+      <Input placeholder="Name" className="w-[45%] placeholder:text-xs" />
+      <Input placeholder="Email" className="w-[45%] placeholder:text-xs" />
+    </Box>
 
-    <Button className="bg-primary text-white font-base hover:bg-white hover:text-primary from-slate-100 rounded-full px-10 py-4 mt-20">
+    <Button className="bg-primary text-white text-xs font-base hover:bg-white hover:text-primary from-slate-100 rounded-full px-10 py-2 mt-16">
       Subscribe
     </Button>
   </section>

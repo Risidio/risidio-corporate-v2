@@ -6,6 +6,19 @@ module.exports = {
     './slices/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    screens: {
+      sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '760px',
+      // => @media (min-width: 768px) { ... }
+
+      lg: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
     extend: {
       fontSize: {
         '75xl': '88px',
@@ -13,6 +26,7 @@ module.exports = {
       backgroundImage: {
         // 'hero-pattern': "url('/img/hero-pattern.svg')",
         'footer-bg': "url('/img/footer-bg.svg')",
+        'static-bg': "url('/img/static-bg.svg')",
       },
       colors: {
         'risidio-yellow': '#f9b807',

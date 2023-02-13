@@ -14,7 +14,7 @@ const Gallery = ({ slice }) => {
       <Box>
         {slice.primary.title ? (
           <RichText
-            className="text-black font-bold text-lg mb-10"
+            className="text-black font-bold text-base mb-10"
             field={slice.primary.title}
           />
         ) : (
@@ -24,7 +24,7 @@ const Gallery = ({ slice }) => {
 
       {slice.primary.subtitle ? (
         <RichText
-          className="text-black font-light text-4xl mb-24"
+          className="text-black font-extralight text-4xl mb-24"
           field={slice.primary.subtitle}
         />
       ) : (
@@ -39,16 +39,18 @@ const Gallery = ({ slice }) => {
 
             return (
               <Button onClick={onClick} className={className} style={style}>
-                {next && <Img src="/img/arrow-right.png" />}
-                {prev && <Img src="/img/arrow-left.png" />}
+                {next && <Img className="h-14" src="/img/arrow-right.png" />}
+                {prev && <Img className="h-14" src="/img/arrow-left.png" />}
               </Button>
             );
           }}
           activeIndicatorIconButtonProps={{
-            className: 'fill-primary',
+            style: {
+              color: '#5fbdc1', // 2
+            },
           }}
           indicatorIconButtonProps={{
-            className: 'fill-gray-300',
+            className: 'fill-primary',
           }}
           indicatorContainerProps={{
             className:
@@ -57,42 +59,49 @@ const Gallery = ({ slice }) => {
           navButtonsAlwaysVisible={true}
           navButtonsProps={{
             className:
-              'group-hover:bg-transparent group-hover-brightness-0 group-hover-opacity-0 top-[26%]',
+              'group-hover:bg-transparent group-hover-brightness-0 group-hover-opacity-0 top-[26%] hidden md:block ',
           }}
           navButtonsWrapperProps={{
             className: 'bg-transparent hover:brightness-0 group',
           }}
         >
           {slice?.items?.map((item, i) => (
-            <Box className="flex px-40 justify-center" key={i}>
-              <Box className="mr-14">
+            <Box
+              className="flex md:flex-row flex-col items-center md:items-left  md:px-40 justify-center"
+              key={i}
+            >
+              <Box className="md:mr-14 mr-0">
                 <Img
                   src={item.image.url}
-                  className="w-64 h-[340px]"
+                  className="md:w-[200px] max-w-[200px] h-[190px] md:h-[256px]"
                   alt={item.image.alt}
                 />
               </Box>
-              <Box className="flex flex-col text-left justify-center">
+              <Box className="flex flex-col mt-5 md:mt-0 text-center md:text-left justify-center">
                 <RichText
-                  className="text-[1.25rem] font-bold mb-4"
+                  className="text-lg md:font-[500] font-bold mb-4"
                   field={item.title}
                 />
-                <Box className="max-w-[18rem]">
-                  <RichText field={item.content} />
+                <Box className="max-w-[18rem] font-[12px] md:font-[14px]">
+                  <RichText field={item.content} className="text-[14px] " />
                 </Box>
                 <Box className="mt-12 flex flex-row justify-between  max-w-[18rem]">
-                  <PrismicHREF
-                    className="text-purple hover:text-primary font-bold "
-                    field={item.link1}
-                  >
-                    Find Out More
-                  </PrismicHREF>
-                  <PrismicHREF
-                    className="text-black font-bold hover:text-primary"
-                    field={item.link2}
-                  >
-                    See All Projects
-                  </PrismicHREF>
+                  {item.link1 && (
+                    <PrismicHREF
+                      className="text-purple text-[14px] hover:text-primary font-bold "
+                      field={item.link1}
+                    >
+                      Find Out More
+                    </PrismicHREF>
+                  )}
+                  {item.link2 && (
+                    <PrismicHREF
+                      className="text-black text-[14px] font-bold hover:text-primary"
+                      field={item.link2}
+                    >
+                      See All Projects
+                    </PrismicHREF>
+                  )}
                 </Box>
               </Box>
             </Box>
