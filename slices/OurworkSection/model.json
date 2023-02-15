@@ -1,57 +1,58 @@
 {
-  "id": "discover_section",
+  "id": "ourwork_section",
   "type": "SharedSlice",
-  "name": "DiscoverSection",
-  "description": "DiscoverSection",
+  "name": "OurworkSection",
+  "description": "OurworkSection",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "DiscoverSection",
+      "description": "OurworkSection",
       "primary": {
         "title": {
           "type": "StructuredText",
           "config": {
-            "single": "heading1",
             "label": "Title",
-            "placeholder": "This is where it all begins..."
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "single": "heading1"
           }
         }
       },
       "items": {
-        "icon": {
+        "project_image": {
           "type": "Image",
           "config": {
-            "label": "icon",
+            "label": "Project Image",
             "constraint": {},
             "thumbnails": []
           }
         },
-        "title": {
+        "project_title": {
           "type": "StructuredText",
           "config": {
-            "label": "Title",
+            "label": "Project title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "single": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "content": {
+        "project_description": {
           "type": "StructuredText",
           "config": {
-            "label": "Content",
+            "label": "Project description",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "single": "preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "more": {
+        "project_link": {
           "type": "Link",
           "config": {
-            "label": "More",
-            "placeholder": "Coming soon",
+            "label": "Project link",
+            "placeholder": "",
             "allowTargetBlank": true,
             "select": null
           }

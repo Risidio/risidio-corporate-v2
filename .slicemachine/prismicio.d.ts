@@ -93,6 +93,47 @@ type HomeDocumentDataSlicesSlice = SectionSliceSlice | HeroSliceSlice | Section2
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+/** Content for OurWork documents */
+type OurWorkDocumentData = Record<string, never>;
+/**
+ * OurWork document from Prismic
+ *
+ * - **API ID**: `our_work`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OurWorkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<OurWorkDocumentData>, "our_work", Lang>;
+/** Content for our work documents */
+interface OurworkDocumentData {
+    /**
+     * Slice Zone field in *our work*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ourwork.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<OurworkDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *our work → Slice Zone*
+ *
+ */
+type OurworkDocumentDataSlicesSlice = OurworkSectionSlice | ArticlesSlice;
+/**
+ * our work document from Prismic
+ *
+ * - **API ID**: `ourwork`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OurworkDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<OurworkDocumentData>, "ourwork", Lang>;
 /** Content for Page documents */
 interface PageDocumentData {
     /**
@@ -184,7 +225,102 @@ type SustainabilityDocumentDataSlicesSlice = HeroV2Slice | DescriptionSlice | Ga
  * @typeParam Lang - Language API ID of the document.
  */
 export type SustainabilityDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SustainabilityDocumentData>, "sustainability", Lang>;
-export type AllDocumentTypes = AboutpageDocument | ContactDocument | HomeDocument | PageDocument | SustainabilityDocument;
+export type AllDocumentTypes = AboutpageDocument | ContactDocument | HomeDocument | OurWorkDocument | OurworkDocument | PageDocument | SustainabilityDocument;
+/**
+ * Primary content in Articles → Primary
+ *
+ */
+interface ArticlesSliceDefaultPrimary {
+    /**
+     * Title field in *Articles → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: articles.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * Item in Articles → Items
+ *
+ */
+export interface ArticlesSliceDefaultItem {
+    /**
+     * Article image field in *Articles → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: articles.items[].article_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    article_image: prismicT.ImageField<never>;
+    /**
+     * Article date field in *Articles → Items*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: articles.items[].article_date
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    article_date: prismicT.DateField;
+    /**
+     * Article title field in *Articles → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: articles.items[].article_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    article_title: prismicT.RichTextField;
+    /**
+     * Article text field in *Articles → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: articles.items[].article_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    article_text: prismicT.RichTextField;
+    /**
+     * Article link field in *Articles → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: articles.items[].article_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    article_link: prismicT.LinkField;
+}
+/**
+ * Default variation for Articles Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Articles`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ArticlesSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ArticlesSliceDefaultPrimary>, Simplify<ArticlesSliceDefaultItem>>;
+/**
+ * Slice variation for *Articles*
+ *
+ */
+type ArticlesSliceVariation = ArticlesSliceDefault;
+/**
+ * Articles Shared Slice
+ *
+ * - **API ID**: `articles`
+ * - **Description**: `Articles`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ArticlesSlice = prismicT.SharedSlice<"articles", ArticlesSliceVariation>;
 /**
  * Primary content in Description → Primary
  *
@@ -331,6 +467,16 @@ export interface DiscoverSectionSliceDefaultItem {
      *
      */
     content: prismicT.RichTextField;
+    /**
+     * More field in *DiscoverSection → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: Coming soon
+     * - **API ID Path**: discover_section.items[].more
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    more: prismicT.LinkField;
 }
 /**
  * Default variation for DiscoverSection Slice
@@ -832,6 +978,91 @@ type HeroV2SliceVariation = HeroV2SliceDefault;
  *
  */
 export type HeroV2Slice = prismicT.SharedSlice<"hero_v2", HeroV2SliceVariation>;
+/**
+ * Primary content in OurworkSection → Primary
+ *
+ */
+interface OurworkSectionSliceDefaultPrimary {
+    /**
+     * Title field in *OurworkSection → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: ourwork_section.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * Item in OurworkSection → Items
+ *
+ */
+export interface OurworkSectionSliceDefaultItem {
+    /**
+     * Project Image field in *OurworkSection → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ourwork_section.items[].project_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    project_image: prismicT.ImageField<never>;
+    /**
+     * Project title field in *OurworkSection → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ourwork_section.items[].project_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    project_title: prismicT.RichTextField;
+    /**
+     * Project description field in *OurworkSection → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ourwork_section.items[].project_description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    project_description: prismicT.RichTextField;
+    /**
+     * Project link field in *OurworkSection → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: ourwork_section.items[].project_link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    project_link: prismicT.LinkField;
+}
+/**
+ * Default variation for OurworkSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `OurworkSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type OurworkSectionSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<OurworkSectionSliceDefaultPrimary>, Simplify<OurworkSectionSliceDefaultItem>>;
+/**
+ * Slice variation for *OurworkSection*
+ *
+ */
+type OurworkSectionSliceVariation = OurworkSectionSliceDefault;
+/**
+ * OurworkSection Shared Slice
+ *
+ * - **API ID**: `ourwork_section`
+ * - **Description**: `OurworkSection`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type OurworkSectionSlice = prismicT.SharedSlice<"ourwork_section", OurworkSectionSliceVariation>;
 /**
  * Primary content in Section1 → Primary
  *
@@ -1358,6 +1589,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutpageDocumentData, AboutpageDocumentDataSlicesSlice, AboutpageDocument, ContactDocumentData, ContactDocumentDataSlicesSlice, ContactDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SustainabilityDocumentData, SustainabilityDocumentDataSlicesSlice, SustainabilityDocument, AllDocumentTypes, DescriptionSliceDefaultPrimary, DescriptionSliceDefaultItem, DescriptionSliceDefault, DescriptionSliceVariation, DescriptionSlice, DiscoverSectionSliceDefaultPrimary, DiscoverSectionSliceDefaultItem, DiscoverSectionSliceDefault, DiscoverSectionSliceVariation, DiscoverSectionSlice, FooterSectionSliceDefaultPrimary, FooterSectionSliceDefault, FooterSectionSliceVariation, FooterSectionSlice, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, GalleryRowSliceDefaultPrimary, GalleryRowSliceDefaultItem, GalleryRowSliceDefault, GalleryRowSliceVariation, GalleryRowSlice, HeroSliceSliceDefaultPrimary, HeroSliceSliceDefault, HeroSliceSliceVariation, HeroSliceSlice, HeroV2SliceDefaultPrimary, HeroV2SliceDefault, HeroV2SliceVariation, HeroV2Slice, SectionSliceSliceDefaultPrimary, SectionSliceSliceDefault, SectionSliceSliceVariation, SectionSliceSlice, Section2SliceDefaultItem, Section2SliceDefault, Section2SliceVariation, Section2Slice, Section3SliceDefaultPrimary, Section3SliceDefault, Section3SliceVariation, Section3Slice, Section4SliceDefaultPrimary, Section4SliceDefault, Section4SliceVariation, Section4Slice, Section5SliceDefaultPrimary, Section5SliceDefaultItem, Section5SliceDefault, Section5SliceVariation, Section5Slice, StackedgallerySliceDefaultPrimary, StackedgallerySliceDefaultItem, StackedgallerySliceDefault, StackedgallerySliceVariation, StackedgallerySlice, TeamGallerySliceDefaultPrimary, TeamGallerySliceDefaultItem, TeamGallerySliceDefault, TeamGallerySliceVariation, TeamGallerySlice };
+        export type { AboutpageDocumentData, AboutpageDocumentDataSlicesSlice, AboutpageDocument, ContactDocumentData, ContactDocumentDataSlicesSlice, ContactDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, OurWorkDocumentData, OurWorkDocument, OurworkDocumentData, OurworkDocumentDataSlicesSlice, OurworkDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SustainabilityDocumentData, SustainabilityDocumentDataSlicesSlice, SustainabilityDocument, AllDocumentTypes, ArticlesSliceDefaultPrimary, ArticlesSliceDefaultItem, ArticlesSliceDefault, ArticlesSliceVariation, ArticlesSlice, DescriptionSliceDefaultPrimary, DescriptionSliceDefaultItem, DescriptionSliceDefault, DescriptionSliceVariation, DescriptionSlice, DiscoverSectionSliceDefaultPrimary, DiscoverSectionSliceDefaultItem, DiscoverSectionSliceDefault, DiscoverSectionSliceVariation, DiscoverSectionSlice, FooterSectionSliceDefaultPrimary, FooterSectionSliceDefault, FooterSectionSliceVariation, FooterSectionSlice, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, GalleryRowSliceDefaultPrimary, GalleryRowSliceDefaultItem, GalleryRowSliceDefault, GalleryRowSliceVariation, GalleryRowSlice, HeroSliceSliceDefaultPrimary, HeroSliceSliceDefault, HeroSliceSliceVariation, HeroSliceSlice, HeroV2SliceDefaultPrimary, HeroV2SliceDefault, HeroV2SliceVariation, HeroV2Slice, OurworkSectionSliceDefaultPrimary, OurworkSectionSliceDefaultItem, OurworkSectionSliceDefault, OurworkSectionSliceVariation, OurworkSectionSlice, SectionSliceSliceDefaultPrimary, SectionSliceSliceDefault, SectionSliceSliceVariation, SectionSliceSlice, Section2SliceDefaultItem, Section2SliceDefault, Section2SliceVariation, Section2Slice, Section3SliceDefaultPrimary, Section3SliceDefault, Section3SliceVariation, Section3Slice, Section4SliceDefaultPrimary, Section4SliceDefault, Section4SliceVariation, Section4Slice, Section5SliceDefaultPrimary, Section5SliceDefaultItem, Section5SliceDefault, Section5SliceVariation, Section5Slice, StackedgallerySliceDefaultPrimary, StackedgallerySliceDefaultItem, StackedgallerySliceDefault, StackedgallerySliceVariation, StackedgallerySlice, TeamGallerySliceDefaultPrimary, TeamGallerySliceDefaultItem, TeamGallerySliceDefault, TeamGallerySliceVariation, TeamGallerySlice };
     }
 }
