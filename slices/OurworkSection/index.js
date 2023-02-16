@@ -13,7 +13,7 @@ const OurworkSection = ({ slice }) => (
       <RichText className="text-white font-bold text-2xl mb-8" field={slice.primary.title} />
     </Box>
     <Box className='w-full bg-white flex justify-center'>
-      <Box className='flex justify-start flex-wrap px-[15px] py-[100px] bg-white max-w-[990px]'>{
+      <Box className='flex justify-start flex-wrap px-[15px] py-[100px] max-w-[990px]'>{
         slice?.items?.map((item, i) =>
           <Box className='w-[217px] m-auto my-4' key={i}>
             <Img src={item.project_image.url} alt={item.project_image.alt} className="w-[217px] h-[287px]" />
