@@ -174,7 +174,7 @@
           },
           "project_description": {
             "config": {
-              "patternType": "HEADING",
+              "patternType": "PARAGRAPH",
               "blocks": 1
             }
           }
