@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Box, Text } from '../base';
-import { Button } from '../base/button';
+import { Box } from '../base';
 import Image from "next/image"
 import logo from "./../../public/risidio_logo_white.svg"
 import discord from "./../../public/discord.svg"
+import twitter from "./../../public/twitter.svg"
+import instagram from "./../../public/instagram.svg"
 import Link from 'next/link';
 
 function Navbar() {
@@ -11,10 +12,10 @@ function Navbar() {
   const [isOpenMenu, setIsOpenMenu] = useState(false)
 
   return (
-    <Box className='px-4 py-2 flex justify-between items-center bg-black'>
+    <Box className='px-4 py-2 flex justify-between items-center '>
 
 
-      <nav className='flex bg-black w-full md:flex items-center justify-between h-14'>
+      <nav className='flex w-full md:flex items-center justify-between h-14'>
 
         <Link href="/"><Image src={logo} alt="risidio logo" className='w-[140px] h-[55px] inline' /></Link>
 
@@ -24,19 +25,28 @@ function Navbar() {
               <li className='text-white mx-4 my-6 md:my-0 text-2xl font-[200]'><Link href="/ourwork">Our work</Link></li>
               <li className='text-white mx-4 my-6 md:my-0 text-2xl font-[200]'><Link href="/about">About</Link></li>
               <li className='text-white mx-4 my-6 md:my-0 text-2xl font-[200]'><Link href="/sustainability">Sustainability</Link></li>
-              <li className='text-[#5fbdc1] mx-4 my-6 md:my-0 text-2xl font-[200]'><Link href="/contact">Contact</Link></li>
+              <li className='text-[#5fbdc1] mx-4 my-6 md:my-0 text-2xl font-medium'><Link href="/contact">Contact</Link></li>
             </ul>
+            <Box className='flex justify-between'>
+              <Link href="https://discord.com/invite/sQaKVft">
+                <Image src={discord} alt='discord logo' className='w-[18.75px] h-[15px]' />
+              </Link>
+              <Link href="https://twitter.com/Risidio1">
+                <Image src={twitter} alt='twitter logo' className='w-[18.75px] h-[15px]' />
+              </Link>
+              <Link href="https://www.instagram.com/risidio_official/">
+                <Image src={instagram} alt='instagram logo' className='w-[18.75px] h-[15px]' />
+              </Link>
+            </Box>
             <Box className='flex text-white font-light text-xs'>Terms & conditions • Privacy policy</Box>
           </Box>
           : <></>}
-
 
         <ul className='hidden bg-black md:mt-0 md:flex md:flex-row md:items-center md:z-auto md:static md:w-auto md:py-0 md:pl-0 md:opacity-100 md:transition-none'>
           <li className='text-white my-0 font-navFont text-navbar pl-0 md:pr-0 hover:underline hover:text-[#5fbdc1] ml-10'><Link href="/ourwork">Our work</Link></li>
           <li className='text-white my-0 font-navFont text-navbar pl-0 md:pr-0 hover:underline hover:text-[#5fbdc1] ml-10'><Link href="/about">About</Link></li>
           <li className='text-white my-0 font-navFont text-navbar pl-0 md:pr-0 hover:underline hover:text-[#5fbdc1] ml-10'><Link href="/sustainability">Sustainability</Link></li>
         </ul>
-
 
         <div className='inline-block md:hidden text-[hsla(0,0%,100%,.5)] border border-[hsla(0,0%,100%,.1);] py-1 px-3 h-[40px]'>
           <button className='flex items-center' onClick={() => { setIsOpenMenu(!isOpenMenu) }}>
@@ -51,6 +61,7 @@ function Navbar() {
             <button className='rounded-full bg-transparent text-[#5fbdc1] text-button'>Contact</button>
           </div>
         </Link>
+        
       </nav>
     </Box >
   );

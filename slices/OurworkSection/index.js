@@ -1,7 +1,7 @@
 import React from 'react'
-import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { PrismicLink } from '@prismicio/react'
 import { RichText, Img, Box } from '../../components/base';
-import Link from 'next/link';
+
 
 /**
  * @typedef {import("@prismicio/client").Content.OurworkSectionSlice} OurworkSectionSlice
@@ -22,8 +22,7 @@ const OurworkSection = ({ slice }) => (
             <RichText field={item.project_description} className="text-[11px]" />
             {item.project_link !== ""
               ? <PrismicLink field={item.project_link} className="text-[#f9b807] text-[11px] font-bold">Find Out More</PrismicLink>
-              : <PrismicLink field={"/"} className="text-[#f9b807] text-[11px] font-bold">Find Out More</PrismicLink>
-              // : <Box className="text-[#f9b807] text-[11px] font-bold">Coming Soon</Box>
+              : <Box className="text-[#f9b807] text-[11px] font-bold">Coming Soon</Box>
             }
           </Box>
         )
