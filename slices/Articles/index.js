@@ -17,10 +17,11 @@ const Articles = ({ slice }) => (
       slice?.items?.map((item, i) =>
         <Box key={i} className="w-[280px] mr-12">
           <Img src={item.article_image.url} alt={item.article_image.alt} className="w-[280px] h-[200px] mb-[5px]" />
-          <span className="text-[#f9b807] text-[11px]">{(item.article_date).toString()}</span>
-          <RichText field={item.article_title} className="text-base font-medium my-2" />
-          <RichText field={item.article_text} className="text-[11px] text-left" />
-          {/* <PrismicLink field={item.article_link}>My Link</PrismicLink> */}
+          <PrismicLink field={item.article_link}>
+            <span className="text-[#f9b807] text-[11px]">{(item.article_date).toString()}</span>
+            <RichText field={item.article_title} className="text-base font-medium my-2" />
+            <RichText field={item.article_text} className="text-[11px] text-left" />
+          </PrismicLink>
 
         </Box>
       )

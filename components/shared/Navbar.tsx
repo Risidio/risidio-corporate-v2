@@ -4,6 +4,7 @@ import { Button } from '../base/button';
 import Image from "next/image"
 import logo from "./../../public/risidio_logo_white.svg"
 import discord from "./../../public/discord.svg"
+import Link from 'next/link';
 
 function Navbar() {
 
@@ -15,22 +16,25 @@ function Navbar() {
 
       <nav className='flex bg-black w-full md:flex items-center justify-between h-14'>
 
-        <Image src={logo} alt="risidio logo" className='w-[140px] h-[55px] inline' />
+        <Link href="/"><Image src={logo} alt="risidio logo" className='w-[140px] h-[55px] inline' /></Link>
 
         {isOpenMenu ?
-          <ul className='bg-black flex flex-col items-center z-10 mt-16 absolute w-full left-0 top-[-0px] transition-all ease-in duration-500 md:hidden'>
-            <li className='text-white mx-4 my-6 md:my-0 text-2xl font-[200]'>Our work</li>
-            <li className='text-white mx-4 my-6 md:my-0 text-2xl font-[200]'>About</li>
-            <li className='text-white mx-4 my-6 md:my-0 text-2xl font-[200]'>Sustainability</li>
-            <li className='text-[#5fbdc1] mx-4 my-6 md:my-0 text-2xl font-[200]'>Contact</li>
-          </ul>
+          <Box className='bg-black h-screen md:hidden z-10 mt-16 fixed w-full left-0 top-[-0px] transition-all ease-in duration-500 flex flex-col items-center justify-evenly'>
+            <ul className='flex flex-col items-center md:hidden'>
+              <li className='text-white mx-4 my-6 md:my-0 text-2xl font-[200]'><Link href="/ourwork">Our work</Link></li>
+              <li className='text-white mx-4 my-6 md:my-0 text-2xl font-[200]'><Link href="/about">About</Link></li>
+              <li className='text-white mx-4 my-6 md:my-0 text-2xl font-[200]'><Link href="/sustainability">Sustainability</Link></li>
+              <li className='text-[#5fbdc1] mx-4 my-6 md:my-0 text-2xl font-[200]'><Link href="/contact">Contact</Link></li>
+            </ul>
+            <Box className='flex text-white font-light text-xs'>Terms & conditions • Privacy policy</Box>
+          </Box>
           : <></>}
 
 
         <ul className='hidden bg-black md:mt-0 md:flex md:flex-row md:items-center md:z-auto md:static md:w-auto md:py-0 md:pl-0 md:opacity-100 md:transition-none'>
-          <li className='text-white my-0 font-navFont text-navbar pl-0 md:pr-0 hover:underline hover:text-[#5fbdc1] ml-10'>Our work</li>
-          <li className='text-white my-0 font-navFont text-navbar pl-0 md:pr-0 hover:underline hover:text-[#5fbdc1] ml-10'>About</li>
-          <li className='text-white my-0 font-navFont text-navbar pl-0 md:pr-0 hover:underline hover:text-[#5fbdc1] ml-10'>Sustainability</li>
+          <li className='text-white my-0 font-navFont text-navbar pl-0 md:pr-0 hover:underline hover:text-[#5fbdc1] ml-10'><Link href="/ourwork">Our work</Link></li>
+          <li className='text-white my-0 font-navFont text-navbar pl-0 md:pr-0 hover:underline hover:text-[#5fbdc1] ml-10'><Link href="/about">About</Link></li>
+          <li className='text-white my-0 font-navFont text-navbar pl-0 md:pr-0 hover:underline hover:text-[#5fbdc1] ml-10'><Link href="/sustainability">Sustainability</Link></li>
         </ul>
 
 
@@ -42,9 +46,11 @@ function Navbar() {
           </button>
         </div>
 
-        <div className='hidden ml-auto mr-4 px-1.5 py-px rounded-full md:flex justify-center items-center bg-[#ffffff33] w-32 h-10 hover:bg-white'>
-          <button className='rounded-full bg-transparent text-[#5fbdc1] text-button'>Contact</button>
-        </div>
+        <Link href="/contact" className='hidden md:flex md:ml-auto'>
+          <div className='hidden mr-4 px-1.5 py-px rounded-full md:flex justify-center items-center bg-[#ffffff33] w-32 h-10 hover:bg-white'>
+            <button className='rounded-full bg-transparent text-[#5fbdc1] text-button'>Contact</button>
+          </div>
+        </Link>
       </nav>
     </Box >
   );

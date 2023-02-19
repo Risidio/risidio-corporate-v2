@@ -22,6 +22,8 @@ module.exports = {
     extend: {
       fontSize: {
         '75xl': '88px',
+        'button': ['13px', { letterSpacing: '0', fontWeight: '700' }],
+        'navbar': ['15px', { letterSpacing: '0', fontWeight: '500' }],
       },
       backgroundImage: {
         // 'hero-pattern': "url('/img/hero-pattern.svg')",
