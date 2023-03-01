@@ -36,7 +36,7 @@ const TeamGallery = ({ slice }) => (
               field={item.subtitle}
             />
             <RichText
-              className="text-black max-w-1xl md:text-[14px] text-[12px]"
+              className="text-black max-w-[27rem] md:text-[14px] text-[12px]"
               field={item.description}
             />
           </Box>

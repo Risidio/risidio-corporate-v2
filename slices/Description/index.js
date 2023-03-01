@@ -8,7 +8,7 @@ import { Box, RichText } from '../../components/base';
  * @param { DescriptionProps }
  */
 const Description = ({ slice }) => (
-  <section className="bg-[#f5f5f5]  flex flex-col justify-center items-center py-60">
+  <section className="bg-[#f5f5f5]  flex flex-col justify-center items-center py-40">
     <Box className="max-w-[859px]">
       <span>
         {slice.primary.title ? (
@@ -32,7 +32,7 @@ const Description = ({ slice }) => (
       {slice?.items?.map((item, i) => (
         <Box key={i} className="px-3">
           <RichText
-            className="text-center mb-4 text-[14px] md:text-base"
+            className="text-center mb-4 text-[14px]"
             field={item.description}
           />
         </Box>

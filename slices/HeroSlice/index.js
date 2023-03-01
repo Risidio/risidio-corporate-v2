@@ -8,10 +8,10 @@ import { RichText } from '../../components/base';
  * @param { HeroSliceProps }
  */
 const HeroSlice = ({ slice }) => (
-  <section className="mt-60 mb-40">
+  <section className="mt-52 mb-40 flex text-center flex-col justify-center items-center">
     {slice.primary.caption1 ? (
       <RichText
-        className="text-base-grey text-center text-[70px] sm:text-8xl font-bold hover:text-white mb-5"
+        className="text-base-grey text-center text-[70px] sm:text-[88px] h-[107px] font-bold hover:text-white w-[420px]"
         field={slice.primary.caption1}
       />
     ) : (
@@ -20,7 +20,7 @@ const HeroSlice = ({ slice }) => (
 
     {slice.primary.caption2 ? (
       <RichText
-        className="text-base-grey text-center text-[70px] sm:text-8xl font-bold hover:text-white mb-5"
+        className="text-base-grey text-center text-[70px] sm:text-[88px] h-[107px] font-bold hover:text-white w-[420px]"
         field={slice.primary.caption2}
       />
     ) : (
@@ -28,7 +28,7 @@ const HeroSlice = ({ slice }) => (
     )}
     {slice.primary.caption3 ? (
       <RichText
-        className="text-base-grey text-center text-[70px] sm:text-8xl  font-bold hover:text-white mb-5"
+        className="text-base-grey text-center text-[70px] sm:text-[88px] h-[107px]  font-bold hover:text-white w-[420px]"
         field={slice.primary.caption3}
       />
     ) : (

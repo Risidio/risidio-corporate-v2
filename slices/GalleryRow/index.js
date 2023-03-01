@@ -8,7 +8,7 @@ import { PrismicRichText } from '@prismicio/react'
  */
 const GalleryRow = ({ slice }) => (
   <section>
-    <span className="title">
+    <span >
       {
         slice.primary.title ?
         <PrismicRichText field={slice.primary.title}/>
@@ -20,16 +20,7 @@ const GalleryRow = ({ slice }) => (
       <PrismicRichText field={slice.primary.description}/>
       : <p>start by editing this slice from inside Slice Machine!</p>
     }
-    <style jsx>{`
-        section {
-          max-width: 600px;
-          margin: 4em auto;
-          text-align: center;
-        }
-        .title {
-          color: #8592e0;
-        }
-    `}</style>
+
   </section>
 )
 

@@ -10,7 +10,7 @@ import { Box, Button, RichText, Text } from '../../components/base';
 const Section3 = ({ slice }) => {
   return (
     <Box className="text-center max-w-[436px] m-auto mt-52 mb-52">
-      <Text className="text-primary font-bold text-9xl">“</Text>
+      <Text className="text-primary font-normal text-9xl h-24">“</Text>
 
       {slice.primary.description ? (
         <RichText

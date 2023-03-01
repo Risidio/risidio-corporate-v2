@@ -20,15 +20,21 @@ const Section5 = ({ slice }) => (
         <h2>Template slice, update me!</h2>
       )}
 
-      <RichText className="text-4xl font-light" field={slice.primary.title2} />
-      <RichText className="text-4xl mt-8 mb-5" field={slice.primary.title3} />
-      <RichText className="mb-5" field={slice.primary.subtitle} />
       <RichText
-        className="max-w-2xl text-center"
+        className="text-4xl font-extralight"
+        field={slice.primary.title2}
+      />
+      <RichText
+        className="text-4xl font-light mt-8 mb-5"
+        field={slice.primary.title3}
+      />
+      <RichText className="mb-5 text-sm" field={slice.primary.subtitle} />
+      <RichText
+        className="max-w-[33rem] text-center text-sm"
         field={slice.primary.comment}
       />
     </Box>
-    <Box className="flex flex-col lg:flex-row max-w-6xl m-auto">
+    <Box className="flex flex-col lg:flex-row max-w-[91rem] m-auto">
       {slice?.items?.map((item, i) => (
         <Card
           key={i}
