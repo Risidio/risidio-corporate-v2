@@ -76,8 +76,8 @@ const FooterSection = ({ slice }) => {
               >
                 About
               </Link>
-              <Link className="text-white font-medium mb-1 text-xs" href="">
-                our work
+              <Link className="text-white font-medium mb-1 text-xs" href="/ourwork">
+                Our work
               </Link>
               <Link
                 href="/sustainability"

@@ -1,15 +1,15 @@
 {
-  "id": "discover_section",
+  "id": "articles",
   "type": "SharedSlice",
-  "name": "DiscoverSection",
-  "description": "DiscoverSection",
+  "name": "Articles",
+  "description": "Articles",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "DiscoverSection",
+      "description": "Articles",
       "primary": {
         "title": {
           "type": "StructuredText",
@@ -21,37 +21,44 @@
         }
       },
       "items": {
-        "icon": {
+        "article_image": {
           "type": "Image",
           "config": {
-            "label": "icon",
+            "label": "Article image",
             "constraint": {},
             "thumbnails": []
           }
         },
-        "title": {
-          "type": "StructuredText",
+        "article_date": {
+          "type": "Date",
           "config": {
-            "label": "Title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "label": "Article date",
+            "placeholder": ""
           }
         },
-        "content": {
+        "article_title": {
           "type": "StructuredText",
           "config": {
-            "label": "Content",
+            "label": "Article title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+            "single": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "more": {
+        "article_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Article text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "article_link": {
           "type": "Link",
           "config": {
-            "label": "More",
-            "placeholder": "Coming soon",
+            "label": "Article link",
+            "placeholder": "",
             "allowTargetBlank": true,
             "select": null
           }

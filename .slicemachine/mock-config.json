@@ -4,7 +4,10 @@
     "page": {},
     "aboutpage": {},
     "sustainability": {},
-    "contact": {}
+    "contact": {},
+    "our_work": {},
+    "ourwork": {},
+    "ourWork": {}
   },
   "slices": {
     "HeroSlice": {
@@ -95,7 +98,8 @@
     },
     "DiscoverSection": {
       "default": {
-        "primary": {}
+        "primary": {},
+        "items": {}
       }
     },
     "Section3": {},
@@ -143,6 +147,51 @@
       "default": {
         "primary": {
           "title2": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "OurworkSection": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "project_title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "project_description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Articles": {
+      "default": {
+        "primary": {},
+        "items": {
+          "article_title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "article_text": {
             "config": {
               "patternType": "PARAGRAPH",
               "blocks": 1

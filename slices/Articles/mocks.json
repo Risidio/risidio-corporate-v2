@@ -9,7 +9,7 @@
           {
             "type": "heading1",
             "content": {
-              "text": "Serve"
+              "text": "Fifty"
             }
           }
         ]
@@ -20,17 +20,18 @@
         "__TYPE__": "GroupItemContent",
         "value": [
           [
-            "icon",
+            "article_image",
             {
+              "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-                "width": 3882,
-                "height": 2584
+                "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+                "width": 12288,
+                "height": 16384
               },
-              "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-              "width": 3882,
-              "height": 2584,
+              "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+              "width": 12288,
+              "height": 16384,
               "edit": {
                 "zoom": 1,
                 "crop": {
@@ -39,47 +40,52 @@
                 },
                 "background": "transparent"
               },
-              "credits": null,
-              "alt": null,
-              "__TYPE__": "ImageContent",
               "thumbnails": {}
             }
           ],
           [
-            "title",
+            "article_date",
+            {
+              "__TYPE__": "FieldContent",
+              "type": "Date",
+              "value": "2014-11-08"
+            }
+          ],
+          [
+            "article_title",
             {
               "__TYPE__": "StructuredTextContent",
               "value": [
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Minim excepteur ut pariatur cupidatat nulla qui ea exercitation. Duis elit deserunt fugiat aliqua anim aliqua in officia deserunt aliqua quis commodo consequat fugiat. In nisi anim velit reprehenderit."
+                    "text": "Id tempor est cupidatat."
                   }
                 }
               ]
             }
           ],
           [
-            "content",
+            "article_text",
             {
               "__TYPE__": "StructuredTextContent",
               "value": [
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Enim aliquip deserunt do pariatur sit tempor eiusmod nostrud et sint aliqua nostrud incididunt velit duis. Ea dolor aliquip eiusmod adipisicing ullamco elit voluptate pariatur ex velit consequat est. Veniam commodo officia sit consequat aliqua dolor reprehenderit occaecat fugiat."
+                    "text": "Do fugiat nulla ipsum aliqua ullamco ea aliquip incididunt labore incididunt occaecat sunt voluptate est. Reprehenderit in mollit elit ut ut labore cillum occaecat sint ut consectetur do qui."
                   }
                 }
               ]
             }
           ],
           [
-            "more",
+            "article_link",
             {
               "__TYPE__": "LinkContent",
               "value": {
                 "__TYPE__": "ExternalLink",
-                "url": "https://slicemachine.dev"
+                "url": "http://google.com"
               }
             }
           ]
