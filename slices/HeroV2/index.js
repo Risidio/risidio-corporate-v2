@@ -8,7 +8,7 @@ import { RichText, Box } from '../../components/base';
  * @param { HeroV2Props }
  */
 const HeroV2 = ({ slice }) => (
-  <section className="flex flex-col justify-center items-center  text-center bg-static-bg min-h-[568px] bg-no-repeat bg-center bg-cover">
+  <section className="flex flex-col justify-center items-center  text-center bg-static-bg min-h-[382px] bg-no-repeat bg-center bg-cover">
     <Box>
       {slice.primary.title ? (
         <RichText

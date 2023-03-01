@@ -73,19 +73,19 @@ const Gallery = ({ slice }) => {
               <Box className="md:mr-14 mr-0">
                 <Img
                   src={item.image.url}
-                  className="md:w-[200px] max-w-[200px] h-[190px] md:h-[256px]"
+                  className=" max-w-[200px] h-[190px] md:h-[234px]"
                   alt={item.image.alt}
                 />
               </Box>
               <Box className="flex flex-col mt-5 md:mt-0 text-center md:text-left justify-center">
                 <RichText
-                  className="text-lg md:font-[500] font-bold mb-4"
+                  className="text-lg md:font-[500] font-bold mb-3"
                   field={item.title}
                 />
-                <Box className="max-w-[18rem] font-[12px] md:font-[14px]">
+                <Box className="max-w-[18rem] text-[12px] md:text-[14px] font-light">
                   <RichText field={item.content} className="text-[14px] " />
                 </Box>
-                <Box className="mt-12 flex flex-row justify-between  max-w-[18rem]">
+                <Box className="mt-9 flex flex-row justify-between  max-w-[18rem]">
                   {item.link1 && (
                     <PrismicHREF
                       className="text-purple text-[14px] hover:text-primary font-bold "
