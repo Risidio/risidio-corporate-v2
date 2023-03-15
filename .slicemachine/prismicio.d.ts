@@ -94,7 +94,24 @@ type HomeDocumentDataSlicesSlice = SectionSliceSlice | HeroSliceSlice | Section2
  */
 export type HomeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 /** Content for OurWork documents */
-type OurWorkDocumentData = Record<string, never>;
+interface OurWorkDocumentData {
+    /**
+     * Slice Zone field in *OurWork*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: our_work.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<OurWorkDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *OurWork → Slice Zone*
+ *
+ */
+type OurWorkDocumentDataSlicesSlice = HeroV2Slice;
 /**
  * OurWork document from Prismic
  *
@@ -123,7 +140,7 @@ interface OurworkDocumentData {
  * Slice for *our work → Slice Zone*
  *
  */
-type OurworkDocumentDataSlicesSlice = OurworkSectionSlice | ArticlesSlice;
+type OurworkDocumentDataSlicesSlice = OurworkSectionSlice | ArticlesSlice | HeroV2Slice;
 /**
  * our work document from Prismic
  *
@@ -227,22 +244,6 @@ type SustainabilityDocumentDataSlicesSlice = HeroV2Slice | DescriptionSlice | Ga
 export type SustainabilityDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SustainabilityDocumentData>, "sustainability", Lang>;
 export type AllDocumentTypes = AboutpageDocument | ContactDocument | HomeDocument | OurWorkDocument | OurworkDocument | PageDocument | SustainabilityDocument;
 /**
- * Primary content in Articles → Primary
- *
- */
-interface ArticlesSliceDefaultPrimary {
-    /**
-     * Title field in *Articles → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: articles.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-}
-/**
  * Item in Articles → Items
  *
  */
@@ -306,7 +307,7 @@ export interface ArticlesSliceDefaultItem {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type ArticlesSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ArticlesSliceDefaultPrimary>, Simplify<ArticlesSliceDefaultItem>>;
+export type ArticlesSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<ArticlesSliceDefaultItem>>;
 /**
  * Slice variation for *Articles*
  *
@@ -1589,6 +1590,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutpageDocumentData, AboutpageDocumentDataSlicesSlice, AboutpageDocument, ContactDocumentData, ContactDocumentDataSlicesSlice, ContactDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, OurWorkDocumentData, OurWorkDocument, OurworkDocumentData, OurworkDocumentDataSlicesSlice, OurworkDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SustainabilityDocumentData, SustainabilityDocumentDataSlicesSlice, SustainabilityDocument, AllDocumentTypes, ArticlesSliceDefaultPrimary, ArticlesSliceDefaultItem, ArticlesSliceDefault, ArticlesSliceVariation, ArticlesSlice, DescriptionSliceDefaultPrimary, DescriptionSliceDefaultItem, DescriptionSliceDefault, DescriptionSliceVariation, DescriptionSlice, DiscoverSectionSliceDefaultPrimary, DiscoverSectionSliceDefaultItem, DiscoverSectionSliceDefault, DiscoverSectionSliceVariation, DiscoverSectionSlice, FooterSectionSliceDefaultPrimary, FooterSectionSliceDefault, FooterSectionSliceVariation, FooterSectionSlice, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, GalleryRowSliceDefaultPrimary, GalleryRowSliceDefaultItem, GalleryRowSliceDefault, GalleryRowSliceVariation, GalleryRowSlice, HeroSliceSliceDefaultPrimary, HeroSliceSliceDefault, HeroSliceSliceVariation, HeroSliceSlice, HeroV2SliceDefaultPrimary, HeroV2SliceDefault, HeroV2SliceVariation, HeroV2Slice, OurworkSectionSliceDefaultPrimary, OurworkSectionSliceDefaultItem, OurworkSectionSliceDefault, OurworkSectionSliceVariation, OurworkSectionSlice, SectionSliceSliceDefaultPrimary, SectionSliceSliceDefault, SectionSliceSliceVariation, SectionSliceSlice, Section2SliceDefaultItem, Section2SliceDefault, Section2SliceVariation, Section2Slice, Section3SliceDefaultPrimary, Section3SliceDefault, Section3SliceVariation, Section3Slice, Section4SliceDefaultPrimary, Section4SliceDefault, Section4SliceVariation, Section4Slice, Section5SliceDefaultPrimary, Section5SliceDefaultItem, Section5SliceDefault, Section5SliceVariation, Section5Slice, StackedgallerySliceDefaultPrimary, StackedgallerySliceDefaultItem, StackedgallerySliceDefault, StackedgallerySliceVariation, StackedgallerySlice, TeamGallerySliceDefaultPrimary, TeamGallerySliceDefaultItem, TeamGallerySliceDefault, TeamGallerySliceVariation, TeamGallerySlice };
+        export type { AboutpageDocumentData, AboutpageDocumentDataSlicesSlice, AboutpageDocument, ContactDocumentData, ContactDocumentDataSlicesSlice, ContactDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, HomeDocument, OurWorkDocumentData, OurWorkDocumentDataSlicesSlice, OurWorkDocument, OurworkDocumentData, OurworkDocumentDataSlicesSlice, OurworkDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SustainabilityDocumentData, SustainabilityDocumentDataSlicesSlice, SustainabilityDocument, AllDocumentTypes, ArticlesSliceDefaultItem, ArticlesSliceDefault, ArticlesSliceVariation, ArticlesSlice, DescriptionSliceDefaultPrimary, DescriptionSliceDefaultItem, DescriptionSliceDefault, DescriptionSliceVariation, DescriptionSlice, DiscoverSectionSliceDefaultPrimary, DiscoverSectionSliceDefaultItem, DiscoverSectionSliceDefault, DiscoverSectionSliceVariation, DiscoverSectionSlice, FooterSectionSliceDefaultPrimary, FooterSectionSliceDefault, FooterSectionSliceVariation, FooterSectionSlice, GallerySliceDefaultPrimary, GallerySliceDefaultItem, GallerySliceDefault, GallerySliceVariation, GallerySlice, GalleryRowSliceDefaultPrimary, GalleryRowSliceDefaultItem, GalleryRowSliceDefault, GalleryRowSliceVariation, GalleryRowSlice, HeroSliceSliceDefaultPrimary, HeroSliceSliceDefault, HeroSliceSliceVariation, HeroSliceSlice, HeroV2SliceDefaultPrimary, HeroV2SliceDefault, HeroV2SliceVariation, HeroV2Slice, OurworkSectionSliceDefaultPrimary, OurworkSectionSliceDefaultItem, OurworkSectionSliceDefault, OurworkSectionSliceVariation, OurworkSectionSlice, SectionSliceSliceDefaultPrimary, SectionSliceSliceDefault, SectionSliceSliceVariation, SectionSliceSlice, Section2SliceDefaultItem, Section2SliceDefault, Section2SliceVariation, Section2Slice, Section3SliceDefaultPrimary, Section3SliceDefault, Section3SliceVariation, Section3Slice, Section4SliceDefaultPrimary, Section4SliceDefault, Section4SliceVariation, Section4Slice, Section5SliceDefaultPrimary, Section5SliceDefaultItem, Section5SliceDefault, Section5SliceVariation, Section5Slice, StackedgallerySliceDefaultPrimary, StackedgallerySliceDefaultItem, StackedgallerySliceDefault, StackedgallerySliceVariation, StackedgallerySlice, TeamGallerySliceDefaultPrimary, TeamGallerySliceDefaultItem, TeamGallerySliceDefault, TeamGallerySliceVariation, TeamGallerySlice };
     }
 }

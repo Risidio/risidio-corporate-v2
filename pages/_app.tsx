@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
 import { repositoryName } from '../prismicio';
+import Footer from '../components/shared/footer';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -14,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Layout>
           <Navbar />
           <Component {...pageProps} />
+          <Footer />
         </Layout>
       </PrismicPreview>
     </PrismicProvider>

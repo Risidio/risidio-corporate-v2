@@ -14,7 +14,7 @@ const Section3 = ({ slice }) => {
 
       {slice.primary.description ? (
         <RichText
-          className="text-white font-extralight text-4xl mb-6"
+          className="text-white font-extralight text-3xl sm:text-4xl mb-6"
           field={slice.primary.description}
         />
       ) : (

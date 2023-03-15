@@ -11,8 +11,8 @@ export default function Home({ page }: PageProps) {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
-        <meta name="Risidio" content="GCreating Decentralised Future" />
+        <title>Risidio</title>
+        <meta name="Risidio" content="Creating Decentralised Future" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -34,11 +34,6 @@ export default function Home({ page }: PageProps) {
             />
           </video>
         </Box>
-
-        {/* <Heading as="h1" className="font-thin">
-          Risidio
-        </Heading>
-        <Text>Decentralized</Text> */}
         <SliceZone slices={page.data.slices} components={components} />
       </Box>
     </>

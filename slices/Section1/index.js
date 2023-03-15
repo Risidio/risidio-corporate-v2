@@ -34,8 +34,8 @@ const SectionSlice = ({ slice }) => {
           <p>Problem Solvers in the Creative Industries</p>
         )}
         {slice.primary.content ? (
-          <Box className="max-w-[45rem] m-auto">
-            <span className="text-white font-light text-[20px]  mb-5">
+          <Box className="max-w-[45rem] mx-4 sm:m-auto ">
+            <span className="text-white font-light text-sm sm:text-[20px]   mb-5">
               {slice.primary.content}
             </span>
           </Box>
@@ -43,9 +43,9 @@ const SectionSlice = ({ slice }) => {
           ''
         )}
         {slice.primary.description ? (
-          <Box className="max-w-[43.5rem] m-auto">
+          <Box className="max-w-[43.5rem] mx-4 sm:m-auto">
             <RichText
-              className="text-white font-light mt-7 text-[20px] mb-5"
+              className="text-white font-light mt-7 text-sm sm:text-[20px] mb-5"
               field={slice.primary.description}
             />
           </Box>

@@ -5,10 +5,14 @@ import { PageProps } from '..';
 import { Box } from '../../components/base';
 import { components } from '../../slices';
 import { createClient } from '../../prismicio';
+import Head from 'next/head';
 
 export default function Sustainability({ page }: PageProps) {
   return (
     <>
+      <Head>
+        <title>Sustainable</title>
+      </Head>
       <Box>
         <SliceZone slices={page.data.slices} components={components} />
       </Box>

@@ -10,16 +10,7 @@
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
       "description": "Articles",
-      "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "single": "heading1",
-            "label": "Title",
-            "placeholder": "This is where it all begins..."
-          }
-        }
-      },
+      "primary": {},
       "items": {
         "article_image": {
           "type": "Image",

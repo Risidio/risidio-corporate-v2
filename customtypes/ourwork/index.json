@@ -15,6 +15,9 @@
             },
             "articles": {
               "type": "SharedSlice"
+            },
+            "hero_v2": {
+              "type": "SharedSlice"
             }
           }
         }
