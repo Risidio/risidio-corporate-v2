@@ -20,21 +20,23 @@ const OurworkSection = ({ slice }) => (
             />
             <RichText
               field={item.project_title}
-              className="text-left text-[28px] text-black mt-3 box-border block"
+              className="text-left text-[28px] font-extralight text-black mt-3 box-border block"
             />
             <RichText
               field={item.project_description}
               className="text-[11px]"
             />
             {item.project_link.url ? (
-              <PrismicLink
-                field={item.project_link}
-                className="text-[#f9b807] text-[11px] font-bold"
-              >
-                Find Out More
-              </PrismicLink>
+              <Box className="mt-6">
+                <PrismicLink
+                  field={item.project_link}
+                  className="text-[#f9b807] text-[11px] font-bold "
+                >
+                  Find Out More
+                </PrismicLink>
+              </Box>
             ) : (
-              <Box className="text-[#f9b807] text-[11px] font-bold">
+              <Box className="text-[#f9b807] text-[11px] font-bold mt-6">
                 Coming Soon
               </Box>
             )}

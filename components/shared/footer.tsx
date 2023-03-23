@@ -1,14 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { Box, Text } from '../base';
+import { Discord, Instagram, Twitter } from './socialMedial';
 
 export default function Footer() {
   const [hover, setHover] = useState('');
+  const { pathname } = useRouter();
+  const fruit = { name: 'apple' };
+  const test = { name: 'apple' };
+
+  console.log(fruit == test);
+
   return (
-    <section className="bg-footer-bg bg-cover pt-52">
-      <Box className="max-w-screen-2xl text-white pb-20  m-auto">
+    <section
+      className={`${
+        pathname === '/' ? 'bg-transparent' : 'bg-footer-bg'
+      } bg-cover pt-52`}
+    >
+      <Box className="max-w-screen-2xl text-white  m-auto">
         <Box className="flex flex-col justify-center items-center mb-56">
           <Text className="text-white font-bold text-3xl mb-5">
             Get in Touch
@@ -46,19 +58,19 @@ export default function Footer() {
             />
           </Box>
         </Box>
-        <Box className="bg-black pl-4 sm:pl-0">
-          <Box className="flex flex-col  sm:flex-row m-auto justify-between max-w-[1400px] pr-9">
-            <Box className="hidden h-20 lg:h-max-content md:flex">
+        <Box className="bg-black sm:pl-0 pb-32 sm:pb-1 pt-14">
+          <Box className="flex flex-col justify-center items-center  sm:flex-row m-auto sm:justify-between max-w-[1400px] sm:pr-9">
+            <Box className=" h-20 lg:h-max-content md:flex sm:pl-3">
               <Link href="/">
                 <Image
                   src="/img/logoWhite.svg"
                   alt="Risidio"
-                  width={300}
-                  height={200}
+                  width={250}
+                  height={150}
                 />
               </Link>
             </Box>
-            <Box className="flex flex-col mb-8">
+            <Box className="sm:flex flex-col mb-8 hidden">
               <Text className="font-light  text-slate-400 text-base mb-3">
                 Sitemap
               </Text>
@@ -82,7 +94,7 @@ export default function Footer() {
                 Sustainability
               </Link>
             </Box>
-            <Box className="flex flex-col text-white mb-8">
+            <Box className="sm:flex flex-col text-white mb-8 hidden">
               <span className="font-light text-slate-400 mb-3 text-base">
                 Projects
               </span>
@@ -103,7 +115,7 @@ export default function Footer() {
                 This is #1
               </Link>
             </Box>
-            <Box className="flex flex-col">
+            <Box className="sm:flex flex-col hidden">
               <Text className="font-light text-slate-400  text-base mb-3">
                 <span>Contact</span>
               </Text>
@@ -121,12 +133,29 @@ export default function Footer() {
 
               <i className="fab fa-discord"></i>
             </Box>
+
+            <Box className="flex, flex-col, justify-center items-center mt-20 sm:hidden">
+              <Text className="text-[#e9493d] mb-6 font-medium  text-xs text-center">
+                Contact us
+              </Text>
+              <Box className="flex justify-center items-start mb-3">
+                <Discord className={'w-5 fill-white mr-4'} />
+                <Twitter className={'w-[16px] fill-white mr-4'} />
+                <Instagram className={'w-[16px] fill-white'} />
+              </Box>
+              <Text className="text-white text-xs pb-3 pl-2">
+                © 2023 Risidio Ltd. All right reserved.
+              </Text>
+            </Box>
+          </Box>
+          <Box className=" justify-between pb-3 px-6 hidden sm:flex sm:mt-20">
+            <Text className="text-white text-xs">
+              © 2023 Risidio Ltd. All right reserved.
+            </Text>
+            <Text className="text-white text-xs">Privacy Policy</Text>
           </Box>
         </Box>
       </Box>
-      <Text className="text-white text-xs pb-3 pl-2">
-        © 2023 Risidio Ltd. All right reserved.
-      </Text>
     </section>
   );
 }
