@@ -7,10 +7,42 @@ import twitter from './../../public/twitter.svg';
 import instagram from './../../public/instagram.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import styles from "./style/animations.module.css";
 
 function Navbar() {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [selectedItem, setSelectedItem] = useState('');
+  const [isAnimating, setIsAnimating] = useState(false);
   const { pathname } = useRouter();
+  
+
+  const handleSelectItem = (item: string) => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setSelectedItem(item);
+    setTimeout(() => {
+      setIsOpenMenu(!isOpenMenu);
+      setIsAnimating(false);
+    }, 400)
+  }
+
+  const resetSelectItem = () => {
+    setSelectedItem("")
+    setTimeout(() => {
+      setIsOpenMenu(!isOpenMenu);
+      setIsAnimating(false);
+    }, 400)
+  }
+
+  const toggleMenu = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    
+    setTimeout(() => {
+      setIsOpenMenu(!isOpenMenu);
+      setIsAnimating(false);
+    }, 400);
+  }
 
   return (
     <Box
@@ -24,54 +56,57 @@ function Navbar() {
             src={logo}
             alt="risidio logo"
             className="w-[140px] h-[55px] inline"
+            onClick={() => resetSelectItem()}
           />
         </Link>
 
         {isOpenMenu ? (
-          <Box className="bg-black h-screen md:hidden z-10 mt-16 fixed w-full left-0 top-[-0px] transition-all ease-in duration-500 flex flex-col items-center ">
-            <ul className="flex flex-col items-center md:hidden mt-10">
-              <li className="text-white mx-4 my-6 md:my-0 text-2xl font-[200]">
-                <Link href="/ourwork">Our work</Link>
-              </li>
-              <li className="text-white mx-4 my-6 md:my-0 text-2xl font-[200]">
-                <Link href="/about">About</Link>
-              </li>
-              <li className="text-white mx-4 my-6 md:my-0 text-2xl font-[200]">
-                <Link href="/sustainability">Sustainability</Link>
-              </li>
-              <li className="text-[#5fbdc1] mx-4 my-6 md:my-0 text-2xl font-medium">
-                <Link href="/contact">Contact</Link>
-              </li>
-            </ul>
-            <Box className="fixed bottom-0 mb-8">
-              <Box className="flex justify-center mb-4">
-                <Link href="https://discord.com/invite/sQaKVft">
-                  <Image
-                    src={discord}
-                    alt="discord logo"
-                    className="w-[18.75px] h-[15px]"
-                  />
-                </Link>
-                <Link href="https://twitter.com/Risidio1">
-                  <Image
-                    src={twitter}
-                    alt="twitter logo"
-                    className="w-[18.75px] h-[15px] mx-2"
-                  />
-                </Link>
-                <Link href="https://www.instagram.com/risidio_official/">
-                  <Image
-                    src={instagram}
-                    alt="instagram logo"
-                    className="w-[18.75px] h-[15px]"
-                  />
-                </Link>
-              </Box>
-              <Box className="flex text-white font-light text-xs">
-                Terms & conditions • Privacy policy
-              </Box>
+          <Box className={`bg-black h-screen md:hidden z-10 mt-16 fixed w-full left-0 top-[-0px] transition-all ease-in duration-500 flex flex-col items-center ${isOpenMenu ? styles.menuContainer : ''} ${isOpenMenu && styles.slideDown} ${isAnimating && styles.slideUp}`}>
+          <ul className={`flex flex-col items-center md:hidden mt-10 ${styles.menuItem}`}>
+            <li className={`text-white mx-4 my-6 md:my-0 text-2xl font-[200] `} onClick={() => handleSelectItem('ourwork')}>
+              <Link href="/ourwork" className={`${selectedItem === 'ourwork' ? styles.li_selected : ''}`} >Our work</Link>
+            </li>
+            <li className={`text-white mx-4 my-6 md:my-0 text-2xl font-[200] `} onClick={() => handleSelectItem('about')}>
+              <Link href="/about" className={`${selectedItem === 'about' ? styles.li_selected : ''}`}>About</Link>
+            </li>
+            <li className={`text-white mx-4 my-6 md:my-0 text-2xl font-[200] `} onClick={() => handleSelectItem('sustainability')}>
+              <Link href="/sustainability" className={`${selectedItem === 'sustainability' ? styles.li_selected : ''}`} >Sustainability</Link>
+            </li>
+            <li className={`text-[#5fbdc1] mx-4 my-6 md:my-0 text-2xl font-medium `} onClick={() => handleSelectItem('contact')}>
+              <Link href="/contact" className={`${selectedItem === 'contact' ? styles.li_selected : ''}`} >Contact</Link>
+            </li>
+          </ul>
+          <Box className={styles.bottomContainerWrapper}>
+          <Box className={`fixed bottom-0 mb-8 ${styles.bottomContainer}`}>
+            <Box className="flex justify-center mb-4">
+              <Link href="https://discord.com/invite/sQaKVft">
+                <Image
+                  src={discord}
+                  alt="discord logo"
+                  className="w-[18.75px] h-[15px]"
+                />
+              </Link>
+              <Link href="https://twitter.com/Risidio1">
+                <Image
+                  src={twitter}
+                  alt="twitter logo"
+                  className="w-[18.75px] h-[15px] mx-2"
+                />
+              </Link>
+              <Link href="https://www.instagram.com/risidio_official/">
+                <Image
+                  src={instagram}
+                  alt="instagram logo"
+                  className="w-[18.75px] h-[15px]"
+                />
+              </Link>
+            </Box>
+            <Box className="flex text-white font-light text-xs">
+              Terms & conditions • Privacy policy
             </Box>
           </Box>
+          </Box>
+        </Box>
         ) : (
           <></>
         )}
@@ -91,9 +126,7 @@ function Navbar() {
         <div className="inline-block md:hidden text-[hsla(0,0%,100%,.5)] border rounded-md border-[hsla(0,0%,100%,.1);] py-1 px-3 h-[40px]">
           <button
             className="flex items-center"
-            onClick={() => {
-              setIsOpenMenu(!isOpenMenu);
-            }}
+            onClick={toggleMenu}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
