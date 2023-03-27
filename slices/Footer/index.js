@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Img, PrismicHREF, RichText, Text } from '../../components/base';
+import { Box, RichText, Text } from '../../components/base';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -76,7 +76,10 @@ const FooterSection = ({ slice }) => {
               >
                 About
               </Link>
-              <Link className="text-white font-medium mb-1 text-xs" href="/ourwork">
+              <Link
+                className="text-white font-medium mb-1 text-xs"
+                href="/ourwork"
+              >
                 Our work
               </Link>
               <Link

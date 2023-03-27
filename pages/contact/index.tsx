@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React, { useState } from 'react';
 import { PageProps } from '..';
 import { Box, Button, Input, Text } from '../../components/base';
+
 export default function Contact({ page }: PageProps) {
   const [form, setForm] = useState({
     name: '',

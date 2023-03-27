@@ -9,10 +9,6 @@ import { Discord, Instagram, Twitter } from './socialMedial';
 export default function Footer() {
   const [hover, setHover] = useState('');
   const { pathname } = useRouter();
-  const fruit = { name: 'apple' };
-  const test = { name: 'apple' };
-
-  console.log(fruit == test);
 
   return (
     <section

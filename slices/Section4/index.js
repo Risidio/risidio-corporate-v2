@@ -38,10 +38,10 @@ const Section4 = ({ slice }) => {
           <h2>Template slice, update me!</h2>
         )}
       </span>
-      <Box className="max-w-xl flex flex-row mt-10 justify-between w-full px-4">
+      <Box className="max-w-xl flex flex-col sm:flex-row mt-10 justify-between w-full px-4">
         <Input
           placeholder="Name"
-          className="w-[48%] placeholder:text-xs"
+          className="sm:w-[48%] placeholder:text-xs"
           value={form.name}
           name="name"
           type="text"
@@ -50,7 +50,7 @@ const Section4 = ({ slice }) => {
         />
         <Input
           placeholder="Email"
-          className="w-[48%] placeholder:text-xs"
+          className="sm:w-[48%] placeholder:text-xs mt-6 sm:mt-0"
           value={form.email}
           name="email"
           type="email"

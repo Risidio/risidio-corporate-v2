@@ -22,8 +22,8 @@ module.exports = {
     extend: {
       fontSize: {
         '75xl': '88px',
-        'button': ['13px', { letterSpacing: '0', fontWeight: '700' }],
-        'navbar': ['15px', { letterSpacing: '0', fontWeight: '500' }],
+        button: ['13px', { letterSpacing: '0', fontWeight: '700' }],
+        navbar: ['15px', { letterSpacing: '0', fontWeight: '500' }],
       },
       backgroundImage: {
         // 'hero-pattern': "url('/img/hero-pattern.svg')",
@@ -36,6 +36,7 @@ module.exports = {
         purple: '#63037e',
         'bg-purple': '#5154a1',
         'base-grey': '#383838',
+        'bg-lighter': '#f5f5f5',
       },
       zIndex: {
         1: '-100',

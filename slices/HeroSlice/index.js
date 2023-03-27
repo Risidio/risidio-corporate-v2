@@ -8,7 +8,7 @@ import { Box, RichText, Text } from '../../components/base';
  * @param { HeroSliceProps }
  */
 const HeroSlice = ({ slice }) => (
-  <section className="mt-52 mb-40 flex text-center flex-col justify-center items-center">
+  <section className="mt-40  sm:mt-52 mb-40 flex text-center flex-col justify-center items-center">
     {slice.primary.caption1 ? (
       <Box className="flex sm:w-[420px] group">
         <Text className=" text-[70px] sm:text-[88px] h-20 sm:h-[107px] font-bold before:content-['ı'] before:text-base-grey  text-[#fda800] before:absolute group-hover:before:text-white">
