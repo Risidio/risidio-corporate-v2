@@ -21,7 +21,7 @@ const HeroV2 = ({ slice }) => (
     </Box>
     {slice.primary.description ? (
       <RichText
-        className="text-white text-lg  md:text-2xl max-w-xs sm:max-w-3xl"
+        className="text-white text-lg font-light  md:text-[22px] max-w-xs sm:max-w-full"
         field={slice.primary.description}
       />
     ) : (

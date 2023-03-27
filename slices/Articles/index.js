@@ -1,6 +1,6 @@
 import React from 'react';
-import { PrismicRichText, PrismicLink } from '@prismicio/react';
-import { RichText, Img, Box } from '../../components/base';
+import { PrismicLink } from '@prismicio/react';
+import { RichText, Img, Box, Text } from '../../components/base';
 import { asDate } from '@prismicio/helpers';
 
 /**
@@ -10,9 +10,11 @@ import { asDate } from '@prismicio/helpers';
  */
 const Articles = ({ slice }) => (
   <Box className="bg-[#f5f5f5] py-28">
-    {/* <Box className="">
-      <RichText field={slice.primary.title} className="font-bold text-[17px] text-center mb-28" />
-    </Box > */}
+    <Box className="">
+      <Text className="font-bold text-[17px] text-center mb-24">
+        Recent Articles Written By Our Team
+      </Text>
+    </Box>
     <Box className="flex flex-col sm:flex-row items-center justify-between max-w-[625px] px-3 m-auto">
       {slice?.items?.map((item, i) => (
         <Box key={i} className="w-[280px] mb-12 sm:mb-0">
