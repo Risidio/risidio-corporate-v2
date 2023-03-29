@@ -20,7 +20,7 @@ export default function Home({ page }: PageProps) {
       <Box>
         <Box className="w-screen">
           <video
-            preload="none"
+            preload="auto"
             autoPlay
             muted
             loop
