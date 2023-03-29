@@ -73,14 +73,12 @@ export default function Footer() {
                 Sitemap
               </Text>
               <Link
-                target="_blank"
                 className="text-white font-medium mb-1 text-xs"
                 href="/ourwork"
               >
                 Our work
               </Link>
               <Link
-                target="_blank"
                 href="/about"
                 className="text-white font-medium mb-1 text-xs"
               >
@@ -88,7 +86,6 @@ export default function Footer() {
               </Link>
 
               <Link
-                target="_blank"
                 href="/sustainability"
                 className="text-white font-medium mb-1 text-xs"
               >
