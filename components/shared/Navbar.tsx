@@ -26,11 +26,15 @@ function Navbar() {
   };
 
   const resetSelectItem = () => {
+    if(isAnimating) return;
     setSelectedItem('');
-    setTimeout(() => {
-      setIsOpenMenu(!isOpenMenu);
-      setIsAnimating(false);
-    }, 400);
+    if(isOpenMenu){
+      
+      setTimeout(() => {
+        setIsOpenMenu(!isOpenMenu);
+        setIsAnimating(false);
+      }, 400);
+    }
   };
 
   const toggleMenu = () => {
