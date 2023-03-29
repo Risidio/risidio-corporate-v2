@@ -20,7 +20,7 @@ const Section4 = ({ slice }) => {
 
   return (
     <form
-      action="https://formsubmit.co/5260f3349c4e9a4ad8b82f257eafbf5c"
+      action="https://formsubmit.co/2c772e29e767b6aa8cfe9c6fd5592ebd"
       method="POST"
       className="bg-bg-purple flex flex-col justify-center items-center py-48"
     >

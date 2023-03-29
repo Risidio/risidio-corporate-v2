@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { Box, RichText, Button } from '../../components/base';
 
@@ -53,12 +54,16 @@ const SectionSlice = ({ slice }) => {
           <p></p>
         )}
         <Box className="w-80 m-auto mt-10 flex justify-between">
-          <Button className="bg-primary font-semibold hover:bg-white hover:text-primary rounded-full px-10">
-            About Us
-          </Button>
-          <Button className="bg-zinc-400/[.4] text-primary font-semibold hover:bg-white from-slate-100 rounded-full px-10">
-            Our Work
-          </Button>
+          <Link href="/about">
+            <Button className="bg-primary font-semibold hover:bg-white hover:text-primary rounded-full px-10">
+              About Us
+            </Button>
+          </Link>
+          <Link href="/ourwork">
+            <Button className="bg-zinc-400/[.4] text-primary font-semibold hover:bg-white from-slate-100 rounded-full px-10">
+              Our Work
+            </Button>
+          </Link>
         </Box>
       </Box>
     </>

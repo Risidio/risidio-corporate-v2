@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { Box, Button, RichText } from '../../components/base';
 import Card from '../../components/shared/card';
@@ -31,9 +32,11 @@ const DiscoverSection = ({ slice }) => (
       ))}
     </Box>
     <Box className="m-auto flex justify-center">
-      <Button className="bg-primary/[.2] text-primary font-semibold hover:bg-primary hover:text-white from-slate-100 rounded-full px-10 py-4 mt-12 text-xs">
-        Interested? Get In Touch
-      </Button>
+      <Link href="/contact">
+        <Button className="bg-primary/[.2] text-primary font-semibold hover:bg-primary hover:text-white from-slate-100 rounded-full px-10 py-4 mt-12 text-xs">
+          Interested? Get In Touch
+        </Button>
+      </Link>
     </Box>
   </Box>
 );

@@ -15,7 +15,7 @@ const HeroSlice = ({ slice }) => (
           i
         </Text>
         <RichText
-          className="text-base-grey text-center text-[70px] h-20 sm:text-[88px] sm:h-[107px] font-bold hover:text-white "
+          className="text-base-grey text-center text-[70px] h-20 sm:text-[88px] sm:h-[107px] font-bold group-hover:text-white "
           field={slice.primary.caption1}
         />
       </Box>
@@ -29,7 +29,7 @@ const HeroSlice = ({ slice }) => (
           i
         </Text>
         <RichText
-          className="text-base-grey text-center text-[70px] h-20 sm:text-[88px] sm:h-[107px] font-bold hover:text-white"
+          className="text-base-grey text-center text-[70px] h-20 sm:text-[88px] sm:h-[107px] font-bold group-hover:text-white"
           field={slice.primary.caption2}
         />
       </Box>
@@ -42,7 +42,7 @@ const HeroSlice = ({ slice }) => (
           i
         </Text>
         <RichText
-          className="text-base-grey text-center text-[70px] sm:text-[88px] sm:h-[107px]  font-bold hover:text-white"
+          className="text-base-grey text-center text-[70px] sm:text-[88px] sm:h-[107px]  font-bold group-hover:text-white"
           field={slice.primary.caption3}
         />
       </Box>

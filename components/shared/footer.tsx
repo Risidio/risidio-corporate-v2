@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -29,17 +28,20 @@ export default function Footer() {
             </span>
           </Box>
           <Box className="flex flex-row w-52 justify-between mt-11">
-            <Image
-              onMouseOver={() => setHover('discord')}
-              onMouseLeave={() => setHover('')}
-              className="cursor-pointer"
-              src={`/img/${
-                hover == 'discord' ? 'discord-light' : 'discord'
-              }.svg`}
-              alt="discord"
-              width={90}
-              height={90}
-            />
+            <Link target="_blank" href="https://discord.com/invite/sQaKVft">
+              <Image
+                onMouseOver={() => setHover('discord')}
+                onMouseLeave={() => setHover('')}
+                className="cursor-pointer"
+                src={`/img/${
+                  hover == 'discord' ? 'discord-light' : 'discord'
+                }.svg`}
+                alt="discord"
+                width={90}
+                height={90}
+              />
+            </Link>
+
             <Image
               onClick={() => {
                 window.location.href = 'mailto:info@risidio.com';
@@ -71,12 +73,14 @@ export default function Footer() {
                 Sitemap
               </Text>
               <Link
+                target="_blank"
                 className="text-white font-medium mb-1 text-xs"
                 href="/ourwork"
               >
                 Our work
               </Link>
               <Link
+                target="_blank"
                 href="/about"
                 className="text-white font-medium mb-1 text-xs"
               >
@@ -84,6 +88,7 @@ export default function Footer() {
               </Link>
 
               <Link
+                target="_blank"
                 href="/sustainability"
                 className="text-white font-medium mb-1 text-xs"
               >
@@ -95,16 +100,22 @@ export default function Footer() {
                 Projects
               </span>
 
-              <Link href="" className="text-white font-medium mb-1 text-xs">
+              <Link
+                target="_blank"
+                href=""
+                className="text-white font-medium mb-1 text-xs"
+              >
                 Marketplace
               </Link>
               <Link
+                target="_blank"
                 href="https://www.indigenft.io/"
                 className="text-white font-medium mb-1 text-xs"
               >
                 IndigeNFT
               </Link>
               <Link
+                target="_blank"
                 href="https://thisisnumberone.com/"
                 className="text-white font-medium mb-1 text-xs"
               >

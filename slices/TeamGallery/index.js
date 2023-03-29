@@ -8,7 +8,7 @@ import { Box, Img, RichText } from '../../components/base';
  * @param { TeamGalleryProps }
  */
 const TeamGallery = ({ slice }) => (
-  <section className="bg-[#f5f5f5] flex flex-col justify-center items-center py-80">
+  <section className="bg-[#f5f5f5] flex flex-col justify-center items-center py-40 md:py-64">
     <Box className="mb-20">
       <span>
         {slice.primary.title ? (
@@ -21,7 +21,7 @@ const TeamGallery = ({ slice }) => (
         )}
       </span>
       <RichText
-        className="text-black  text-2xl "
+        className="text-black  text-2xl"
         field={slice.primary.subtitle}
       />
     </Box>
