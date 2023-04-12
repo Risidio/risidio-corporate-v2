@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Box, Text, Heading } from '../components/base';
+import { Box } from '../components/base';
 import type { InferGetStaticPropsType, GetStaticPropsContext } from 'next';
 import { createClient } from '../prismicio';
 import { SliceZone } from '@prismicio/react';
@@ -18,7 +18,7 @@ export default function Home({ page }: PageProps) {
       </Head>
 
       <Box>
-        <Box className="w-screen">
+        <Box className="w-screen bg-black">
           <video
             preload="auto"
             autoPlay

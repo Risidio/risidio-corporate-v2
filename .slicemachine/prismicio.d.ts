@@ -696,6 +696,16 @@ interface GallerySliceDefaultPrimary {
      *
      */
     subtitle: prismicT.RichTextField;
+    /**
+     * type field in *Gallery → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: gallery.primary.type
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    type: prismicT.KeyTextField;
 }
 /**
  * Item in Gallery → Items

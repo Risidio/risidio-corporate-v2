@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { Button } from '@mui/material';
 import { Box, Img, PrismicHREF, RichText, Text } from '../../components/base';
+import Link from 'next/link';
 
 /**
  * @typedef {import("@prismicio/client").Content.GallerySlice} GallerySlice
@@ -86,21 +87,34 @@ const Gallery = ({ slice }) => {
                   <RichText field={item.content} className="text-[14px] " />
                 </Box>
                 <Box className="mt-9 flex flex-row justify-between  max-w-[18rem]">
-                  {item.link1 && (
-                    <PrismicHREF
-                      className="text-purple text-[14px] hover:text-primary font-bold "
-                      field={item.link1}
+                  {slice.primary.type === 'what-we-do' ? (
+                    item.link1 ? (
+                      <PrismicHREF
+                        className="text-purple text-[14px] hover:text-primary font-bold "
+                        field={item.link1}
+                      >
+                        Find Out More
+                      </PrismicHREF>
+                    ) : (
+                      <Text className="text-purple text-[14px] hover:text-primary font-bold ">
+                        Coming soon
+                      </Text>
+                    )
+                  ) : (
+                    <Link
+                      className="text-risidio-yellow text-[14px] font-bold hover:text-primary"
+                      href="/ourwork"
                     >
-                      Find Out More
-                    </PrismicHREF>
+                      Find out more
+                    </Link>
                   )}
-                  {item.link2 && (
-                    <PrismicHREF
+                  {slice.primary.type === 'what-we-do' && (
+                    <Link
                       className="text-black text-[14px] font-bold hover:text-primary"
-                      field={item.link2}
+                      href="/ourwork"
                     >
                       See All Projects
-                    </PrismicHREF>
+                    </Link>
                   )}
                 </Box>
               </Box>

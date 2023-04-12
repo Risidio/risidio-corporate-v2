@@ -27,6 +27,13 @@
             "allowTargetBlank": true,
             "single": "paragraph"
           }
+        },
+        "type": {
+          "type": "Text",
+          "config": {
+            "label": "type",
+            "placeholder": ""
+          }
         }
       },
       "items": {

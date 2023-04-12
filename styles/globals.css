@@ -5,6 +5,7 @@
 @layer base {
   video {
     max-width: auto;
+    background:#000
   }
 }
 :root {
@@ -116,3 +117,12 @@ a {
   }
 }
 
+#globalLoader{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: #000;
+  z-index: 10;  /*just make sure it's the highest on the page*/
+}
