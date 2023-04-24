@@ -126,3 +126,46 @@ a {
   background-color: #000;
   z-index: 10;  /*just make sure it's the highest on the page*/
 }
+
+.fade-enter-active-first {
+  animation-name: first;
+  animation-duration: 3s;
+}
+.fade-enter-active-second {
+  animation-name: second;
+  animation-duration: 4s;
+}
+.fade-enter-active-third {
+  animation-name: third;
+  animation-duration: 5s;
+}
+@keyframes first {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.6);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes second {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes third {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
