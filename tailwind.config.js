@@ -29,6 +29,11 @@ module.exports = {
         // 'hero-pattern': "url('/img/hero-pattern.svg')",
         'footer-bg': "url('/img/footer-bg.svg')",
         'static-bg': "url('/img/static-bg.svg')",
+        'susta-bg': "url('/img/susta-bg.png')",
+        'nav-bg': "url('/img/nav-bg.png')",
+        'card-bg': "url('/img/Card.png')",
+        'crm-bg': "url('/img/risidioCRM.png')",
+        'earth-bg': "url('/img/earth.png')"
       },
       colors: {
         'risidio-yellow': '#f9b807',
@@ -37,6 +42,10 @@ module.exports = {
         'bg-purple': '#5154a1',
         'base-grey': '#383838',
         'bg-lighter': '#f5f5f5',
+        'susta-blue': '#30b3b8',
+        'governance': '#FAB808',
+        'strategy': '#5FBDC1',
+        'risk': '#E94A3D'
       },
       zIndex: {
         1: '-100',

@@ -14,6 +14,7 @@ import Section2 from './Section2';
 import Section3 from './Section3';
 import Section4 from './Section4';
 import Section5 from './Section5';
+import SectionCards from './SectionCards';
 import Stackedgallery from './Stackedgallery';
 import TeamGallery from './TeamGallery';
 
@@ -32,6 +33,7 @@ export {
 	Section3,
 	Section4,
 	Section5,
+	SectionCards,
 	Stackedgallery,
 	TeamGallery,
 };
@@ -51,6 +53,7 @@ export const components = {
 	section3: Section3,
 	section4: Section4,
 	section5: Section5,
+	section_cards: SectionCards,
 	stackedgallery: Stackedgallery,
 	team_gallery: TeamGallery,
 };

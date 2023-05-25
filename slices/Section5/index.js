@@ -10,42 +10,40 @@ import Card from '../../components/shared/card';
  */
 const Section5 = ({ slice }) => {
   return (
-    <section className="py-16 bg-bg-lighter">
-      <Box className=" flex flex-col justify-center text-center items-center px-10">
+    <section className="py-16 bg-bg-lighter bg-earth-bg bg-no-repeat bg-cover bg-white">
+      <Box className=" grid grid-cols-6 gap-6 text-center px-10">
+        <Box className="col-start-1 col-span-3 pt-20">
+        <RichText
+          className="text-governance text-1xl font-light"
+          field={slice.primary.title3}
+        />
+        <RichText className="mb-5 text-lg font-light text-strategy" field={slice.primary.subtitle} />
+        <RichText
+          className="text-center text-base px-20"
+          field={slice.primary.comment}
+        />
+        </Box>
+        <Box className='col-end-7 col-span-3 '>
         {slice.primary.title ? (
           <RichText
-            className="text-black font-bold text-lg mb-10"
+            className="text-strategy font-light text-3xl mb-5"
             field={slice.primary.title}
           />
         ) : (
           <h2>Template slice, update me!</h2>
         )}
-
         <RichText
-          className="text-4xl font-extralight"
+          className="text-2xl leading-none	 font-extralight"
           field={slice.primary.title2}
         />
-        <RichText
-          className="text-4xl font-light mt-8 mb-5"
-          field={slice.primary.title3}
-        />
-        <RichText className="mb-5 text-sm" field={slice.primary.subtitle} />
-        <RichText
-          className="max-w-[33rem] text-center text-sm"
-          field={slice.primary.comment}
-        />
+        <div className='flex justify-center'>
+        <img className='h-96 w-192' src={slice.primary.earth.url} alt={slice.primary.earth.alt} />
+        </div>
+        
+        
+        </Box>
       </Box>
-      <Box className="flex flex-col lg:flex-row max-w-[91rem] m-auto">
-        {slice?.items?.map((item, i) => (
-          <Card
-            key={i}
-            content={item.description}
-            title={item.title}
-            url={item.icon.url}
-            alt={item.icon.alt}
-          />
-        ))}
-      </Box>
+      
     </section>
   );
 };

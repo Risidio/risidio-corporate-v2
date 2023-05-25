@@ -57,65 +57,33 @@
             }
           }
         ]
+      },
+      "earth": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+          "width": 6000,
+          "height": 4000
+        },
+        "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+        "width": 6000,
+        "height": 4000,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
       }
     },
     "items": [
       {
         "__TYPE__": "GroupItemContent",
-        "value": [
-          [
-            "icon",
-            {
-              "__TYPE__": "ImageContent",
-              "origin": {
-                "id": "main",
-                "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
-                "width": 6000,
-                "height": 4000
-              },
-              "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
-              "width": 6000,
-              "height": 4000,
-              "edit": {
-                "zoom": 1,
-                "crop": {
-                  "x": 0,
-                  "y": 0
-                },
-                "background": "transparent"
-              },
-              "thumbnails": {}
-            }
-          ],
-          [
-            "title",
-            {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Qui dolor laboris id consequat nulla ea dolore mollit ipsum ex aute cillum do cillum. Minim cillum mollit do nisi elit exercitation. Dolore deserunt sunt sunt id consequat culpa eiusmod Lorem Lorem."
-                  }
-                }
-              ]
-            }
-          ],
-          [
-            "description",
-            {
-              "__TYPE__": "StructuredTextContent",
-              "value": [
-                {
-                  "type": "paragraph",
-                  "content": {
-                    "text": "Culpa elit nulla commodo veniam sit consectetur. Proident labore culpa id sunt irure voluptate in in esse."
-                  }
-                }
-              ]
-            }
-          ]
-        ]
+        "value": []
       }
     ]
   }

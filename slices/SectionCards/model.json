@@ -1,15 +1,15 @@
 {
-  "id": "section5",
+  "id": "section_cards",
   "type": "SharedSlice",
-  "name": "Section5",
-  "description": "Section5",
+  "name": "SectionCards",
+  "description": "SectionCards",
   "variations": [
     {
       "id": "default",
       "name": "Default",
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
-      "description": "Section5",
+      "description": "SectionCards",
       "primary": {
         "title": {
           "type": "StructuredText",
@@ -19,46 +19,82 @@
             "placeholder": "This is where it all begins..."
           }
         },
-        "title2": {
+        "description": {
           "type": "StructuredText",
           "config": {
-            "label": "Title2",
-            "placeholder": "A nice description of your feature",
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your feature"
+          }
+        },
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "border": {
+          "type": "Image",
+          "config": {
+            "label": "border",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title2": {
+          "type": "Text",
+          "config": {
+            "label": "title2",
+            "placeholder": ""
+          }
+        },
+        "description2": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description2",
+            "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph"
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "icon2": {
+          "type": "Image",
+          "config": {
+            "label": "icon2",
+            "constraint": {},
+            "thumbnails": []
           }
         },
         "title3": {
+          "type": "Text",
+          "config": {
+            "label": "title3",
+            "placeholder": ""
+          }
+        },
+        "description3": {
           "type": "StructuredText",
           "config": {
-            "label": "Title3",
+            "label": "description3",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "subtitle": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Subtitle",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "comment": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Comment",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "earth": {
+        "icon3": {
           "type": "Image",
           "config": {
-            "label": "earth",
+            "label": "icon3",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "banner": {
+          "type": "Image",
+          "config": {
+            "label": "banner",
             "constraint": {},
             "thumbnails": []
           }

@@ -8,11 +8,12 @@ import { RichText, Box } from '../../components/base';
  * @param { HeroV2Props }
  */
 const HeroV2 = ({ slice }) => (
-  <section className="flex flex-col justify-center items-center  text-center bg-static-bg min-h-[382px] bg-no-repeat bg-center bg-cover">
+  <section className="flex flex-col justify-center items-center  text-center bg-susta-bg bg-no-repeat bg-cover bg-center h-[100vh]">
+    <Box className="pb-40 pt-10">
     <Box>
       {slice.primary.title ? (
         <RichText
-          className="text-white font-bold text-2xl mb-8"
+          className="text-susta-blue text-lg mb-7 mt-4 mr-10 tracking-wider"
           field={slice.primary.title}
         />
       ) : (
@@ -21,12 +22,14 @@ const HeroV2 = ({ slice }) => (
     </Box>
     {slice.primary.description ? (
       <RichText
-        className="text-white text-lg font-light  md:text-[22px] max-w-xs sm:max-w-full"
+        className="text-white text-lg font-light mr-10  md:text-[22px] max-w-xs sm:max-w-full"
         field={slice.primary.description}
       />
+      
     ) : (
       <p>start by editing this slice from inside Slice Machine!</p>
     )}
+    </Box>
   </section>
 );
 

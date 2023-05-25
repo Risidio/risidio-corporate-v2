@@ -1,0 +1,42 @@
+{
+  "id": "sustainibility_cards",
+  "label": "sustainibility_cards",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "icon": {
+        "type": "Image",
+        "config": {
+          "label": "icon",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "border": {
+        "type": "Image",
+        "config": {
+          "label": "border",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

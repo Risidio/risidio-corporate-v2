@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import { PrismicRichText } from '@prismicio/react'
 
 import { Box, RichText } from '../../components/base';
 
@@ -11,41 +12,48 @@ import { Box, RichText } from '../../components/base';
 const Description = ({ slice }) => {
   const { pathname } = useRouter();
   return (
+    
     <section
       className={`${
-        pathname === '/sustainability' ? 'bg-white' : 'bg-bg-lighter'
-      }  flex flex-col justify-center items-center py-40`}
+        pathname === '/sustainability' ? 'bg-crm-bg bg-white bg-no-repeat bg-fit' : 'bg-bg-lighter'
+      } pt-20  pl-20`}
     >
-      <Box className="max-w-[859px]">
-        <span>
+      <Box className="relative grid grid-cols-6 gap-0 min-h-[100vh]">
+      
+      <Box className="absolute col-end-5 col-span-5 h-[] w-full object-cover object-right">
+      
+        <div className="w-fit border-b-2 border-susta-blue">
           {slice.primary.title ? (
             <RichText
-              className="font-bold text-2xl text-center mb-9"
+              className=" text-left text-black font-light tracking-wider	 text-4xl mb-5"
               field={slice.primary.title}
             />
           ) : (
             <h2>Template slice, update me!</h2>
           )}
-        </span>
-        {slice.primary.subtitle ? (
-          <RichText
-            className="text-center text-black font-light text-4xl mb-9"
-            field={slice.primary.subtitle}
-          />
-        ) : (
-          <p>start by editing this slice from inside Slice Machine!</p>
-        )}
-
+        </div>
+        
+       
+        
         {slice?.items?.map((item, i) => (
-          <Box key={i} className="px-3">
+          <Box key={i} className=" mt-5">
             <RichText
-              className="text-center mb-4 text-[14px]"
+              className="text-left mb-4 w-[80%] text-[14px]"
               field={item.description}
             />
+           
           </Box>
         ))}
-      </Box>
+        
+        </Box>
+        <Box className='absolute z-20 bottom-0 left-0 col-start-1 col-span-7'>
+        <img src={slice.primary.tree.url} alt={slice.primary.tree.alt} />
+        </Box> 
+        
+      </Box>  
+        
     </section>
+    
   );
 };
 

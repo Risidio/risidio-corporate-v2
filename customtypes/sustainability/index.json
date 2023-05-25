@@ -24,6 +24,9 @@
             },
             "section5": {
               "type": "SharedSlice"
+            },
+            "section_cards": {
+              "type": "SharedSlice"
             }
           }
         }

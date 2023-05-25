@@ -50,7 +50,9 @@ function Navbar() {
   return (
     <Box
       className={`px-4 sm:px-12 py-2 flex justify-between items-center bg-black ${
-        pathname === '/contact' && 'sm:bg-bg-purple'
+        pathname === '/contact' && 'sm:bg-bg-purple' 
+      } ${
+        pathname === '/sustainability' && 'sm:bg-nav-bg  bg-cover bg-center pb-8'
       }`}
     >
       <nav className="flex w-full md:flex items-center justify-between h-14">
