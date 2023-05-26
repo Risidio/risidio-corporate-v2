@@ -17,13 +17,13 @@ const SectionCards = ({ slice }) => {
  
   <section className={`${
     pathname === '/sustainability' ? 'bg-white' : 'bg-bg-lighter'
-  } grid grid-cols-6  text-black`}>
+  } grid-rows-auto justify-center items-center text-center  lg:grid grid-cols-6  text-black`}>
     
     <div className ="col-start-2 col-end-6 justify-center pb-10 clip-border"><img src={slice.primary.banner.url} alt={slice.primary.banner.alt} />
   </div>
     
     
-    <Box className="col-end-3 col-span-2 text-center justify-center bg-card-bg  bg-no-repeat bg-center bg-clip-border pb-8" >
+    <Box className="text-center justify-center bg-card-bg  bg-no-repeat bg-center bg-clip-border pb-8 lg:col-end-3 col-span-2 text-center justify-center bg-card-bg  bg-no-repeat bg-center bg-clip-border pb-8" >
       
       <div className="max-w-[15rem] m-auto">
       <img src={slice.primary.icon.url} alt={slice.primary.icon.alt} />
@@ -38,7 +38,7 @@ const SectionCards = ({ slice }) => {
     </span>
     {
       slice.primary.description ?
-      <RichText className="w-fit  text-center text-sm px-0 lg:px-20" field={slice.primary.description}/>
+      <RichText className="max-w-[15rem] m-auto text-center text-sm" field={slice.primary.description}/>
       : <p>start by editing this slice from inside Slice Machine!</p>
     }
     
@@ -52,7 +52,7 @@ const SectionCards = ({ slice }) => {
   
     {
       slice.primary.description ?
-      <RichText className="w-fit  text-center text-sm px-0 lg:px-20" field={slice.primary.description2}/>
+      <RichText className="max-w-[15rem] m-auto text-center text-sm" field={slice.primary.description2}/>
       : <p>start by editing this slice from inside Slice Machine!</p>
     }
     
@@ -66,7 +66,7 @@ const SectionCards = ({ slice }) => {
       <div className="text-risk text-2xl lg:text-3xl font-light pb-10">{ slice.primary.title3 }</div>
     {
       slice.primary.description ?
-      <RichText className="w-fit  text-center text-sm px-0 lg:px-20" field={slice.primary.description3}/>
+      <RichText className="max-w-[15rem] m-auto text-center text-sm" field={slice.primary.description3}/>
       : <p>start by editing this slice from inside Slice Machine!</p>
     }
     

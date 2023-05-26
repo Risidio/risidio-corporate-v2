@@ -11,7 +11,8 @@ import Card from '../../components/shared/card';
 const Section5 = ({ slice }) => {
   return (
     <section className="py-16 bg-bg-lighter bg-earth-bg bg-no-repeat bg-cover bg-white">
-      <Box className=" grid grid-cols-6 gap-6 text-center px-10">
+      <Box className=" grid-rows-auto justify-center items-center text-center md:grid grid-cols-6 gap-6 text-center px-10">
+
         <Box className="col-start-1 col-span-3 pt-20">
         <RichText
           className="text-governance text-1xl font-light"
@@ -26,7 +27,7 @@ const Section5 = ({ slice }) => {
         <Box className='col-end-7 col-span-3 '>
         {slice.primary.title ? (
           <RichText
-            className="text-strategy font-light text-3xl mb-5"
+            className="text-strategy font-light text-3xl mb-5 mt-5"
             field={slice.primary.title}
           />
         ) : (
