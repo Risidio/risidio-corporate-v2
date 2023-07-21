@@ -20,7 +20,7 @@ const HeroSlice = ({ slice }) => (
         />
       </Box>
     ) : (
-      <h2>Template slice, update me!</h2>
+      <div></div>
     )}
 
     {slice.primary.caption2 ? (
@@ -34,7 +34,7 @@ const HeroSlice = ({ slice }) => (
         />
       </Box>
     ) : (
-      <p>start by editing this slice from inside Slice Machine!</p>
+      <div></div>
     )}
     {slice.primary.caption3 ? (
       <Box className="flex justify-center w-[420px] group fade-enter-active-third">
@@ -47,7 +47,7 @@ const HeroSlice = ({ slice }) => (
         />
       </Box>
     ) : (
-      <p>start by editing this slice from inside Slice Machine!</p>
+      <div></div>
     )}
     <RichText
       className="text-white font-light mt-10 text-center sm:mt-14"

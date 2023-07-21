@@ -35,7 +35,7 @@ const Section4 = ({ slice }) => {
             field={slice.primary.title}
           />
         ) : (
-          <h2>Template slice, update me!</h2>
+          <div></div>
         )}
       </span>
       <Box className="max-w-xl flex flex-col sm:flex-row mt-10 justify-between w-full px-4">

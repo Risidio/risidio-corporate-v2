@@ -19,7 +19,7 @@ const Gallery = ({ slice }) => {
             field={slice.primary.title}
           />
         ) : (
-          <h2></h2>
+          <div></div>
         )}
       </Box>
 
@@ -29,7 +29,7 @@ const Gallery = ({ slice }) => {
           field={slice.primary.subtitle}
         />
       ) : (
-        <p></p>
+        <div></div>
       )}
       <Box className="max-w-6xl m-auto">
         <Carousel

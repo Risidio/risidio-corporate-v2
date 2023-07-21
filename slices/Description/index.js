@@ -24,7 +24,7 @@ const Description = ({ slice }) => {
               field={slice.primary.title}
             />
           ) : (
-            <h2>Template slice, update me!</h2>
+            <div></div>
           )}
         </span>
         {slice.primary.subtitle ? (
@@ -33,7 +33,7 @@ const Description = ({ slice }) => {
             field={slice.primary.subtitle}
           />
         ) : (
-          <p>start by editing this slice from inside Slice Machine!</p>
+          <div></div>
         )}
 
         {slice?.items?.map((item, i) => (

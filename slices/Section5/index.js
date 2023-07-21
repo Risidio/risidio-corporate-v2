@@ -10,7 +10,7 @@ import Card from '../../components/shared/card';
  */
 const Section5 = ({ slice }) => {
   return (
-    <section className="py-16 bg-bg-lighter">
+    <section className="py-24 bg-bg-lighter">
       <Box className=" flex flex-col justify-center text-center items-center px-10">
         {slice.primary.title ? (
           <RichText
@@ -18,7 +18,7 @@ const Section5 = ({ slice }) => {
             field={slice.primary.title}
           />
         ) : (
-          <h2>Template slice, update me!</h2>
+          <div></div>
         )}
 
         <RichText

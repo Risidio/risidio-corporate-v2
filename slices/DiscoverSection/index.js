@@ -17,7 +17,7 @@ const DiscoverSection = ({ slice }) => (
           field={slice.primary.title}
         />
       ) : (
-        <h2>Template slice, update me!</h2>
+        <div></div>
       )}
     </Box>
     <Box className="flex flex-col lg:flex-row max-w-7xl m-auto ">
