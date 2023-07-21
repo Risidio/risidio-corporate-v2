@@ -17,7 +17,7 @@ const TeamGallery = ({ slice }) => (
             field={slice.primary.title}
           />
         ) : (
-          <h2>Template slice, update me!</h2>
+          <div></div>
         )}
       </span>
       <RichText

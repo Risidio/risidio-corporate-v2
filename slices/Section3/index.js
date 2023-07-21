@@ -19,7 +19,7 @@ const Section3 = ({ slice }) => {
           field={slice.primary.description}
         />
       ) : (
-        <p></p>
+        <div></div>
       )}
       <Box className="title">
         {slice.primary.title ? (
@@ -28,7 +28,7 @@ const Section3 = ({ slice }) => {
             field={slice.primary.title}
           />
         ) : (
-          <h2></h2>
+          <div></div>
         )}
       </Box>
       <Link href="/about">

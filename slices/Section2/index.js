@@ -12,13 +12,13 @@ const Section2 = ({ slice }) => (
       {slice.primary.title ? (
         <PrismicRichText field={slice.primary.title} />
       ) : (
-        <h2>Template slice, update me!</h2>
+        <div></div>
       )}
     </span>
     {slice.primary.description ? (
       <PrismicRichText field={slice.primary.description} />
     ) : (
-      <p>start by editing this slice from inside Slice Machine!</p>
+      <div></div>
     )}
   </section>
 );
