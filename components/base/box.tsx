@@ -13,7 +13,7 @@ const Root: React.ForwardRefRenderFunction<HTMLDivElement, BoxProps> = (
   const classes = twMerge('relative', className);
   return (
     <div className={classes} ref={ref} {...props}>
-       {children}
+        {children}
     </div>
   );
 };
